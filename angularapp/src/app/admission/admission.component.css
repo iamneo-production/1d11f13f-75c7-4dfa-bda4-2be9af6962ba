@@ -1,93 +1,100 @@
-.admission-form-container {
-    background-color: #e6fff6;
-    ;
-    padding: 50px;
-    margin: 50px auto;
-    max-width: 900px;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid #55aaff;
-  }
-  .admission-form-container h1 {
-    font-size: 36px;
-    color: #000000;
-  }
-  
-  /* Form labels */
-  .form-group label {
-    font-size: 18px;
-    font-weight: 500;
-    color: #333333;
-    margin-bottom: 7px;
-    display: block;
-  }
-  
-  .form-control {
-    border-radius: 10px;
-    font-size: 15px;
-    height: 40px;
-    margin-bottom: 0;
-    padding: 5px;
-    border: 1px solid #cccccc;
-    line-height: 2.0;
-  }
-  
-  .form-control:focus {
-    border-color: #007bff;
-    box-shadow: none;
-  }
-  
-  .form-control option {
-    font-size: 18px;
-    font-weight: 400;
-    cursor: pointer;
-    padding: 10px;
-    color: #333333;
-  }
-  
-  .custom-select:hover {
-    cursor: pointer;
-  }
-  .custom-select option {
-    font-size: 18px;
-    font-weight: 400;
-    cursor: pointer;
-    padding: 10px;
-  }
-  .custom-btn {
-    color: inherit;
-    background-color: transparent;
-    border-color: #007bff;
-    width: 200px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .custom-btn:hover {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  span {
-    color: red;
-  }
-  /* admission.component.css */
-  .invalid input {
-    border-color: red;
-  }
-  
-  .input-container {
-    position: relative;
-  }
-  .tooltip {
-    font-size: 14px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 4px;
-    padding: 8px;
-  }
-  
-  .tooltip .arrow:before {
-    border-top-color: #333;
-  }
-  
-  
+.container {
+  background-color: #e6fff6;;
+  padding: 50px;
+  margin: 50px auto;
+  max-width: 550px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #55aaff;
+}
+.admission-form-container h1 {
+  font-size: 28px;
+  color: #000000;
+}
+
+/* Form labels */
+.form-group label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 7px;
+  display: block;
+}
+
+.form-control {
+  border-radius: 10px;
+  font-size: 15px;
+  height: 40px;
+  margin-bottom: 0;
+  padding: 5px;
+  border: 1px solid #cccccc;
+  line-height: 2.0;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: none;
+}
+
+.form-control option {
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 10px;
+  color: #333333;
+}
+
+.custom-select:hover {
+  cursor: pointer;
+}
+.custom-select option {
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 10px;
+}
+.custom-btn {
+  color: inherit;
+  background-color: transparent;
+  border-color: #007bff;
+  width: 200px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+span {
+  color: red;
+}
+/* admission.component.css */
+.invalid input {
+  border-color: red;
+}
+
+.input-container {
+  position: relative;
+}
+.tooltip {
+  font-size: 14px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.tooltip .arrow:before {
+  border-top-color: #333;
+}
+
+.validation-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.validation-error + .form-control {
+  border-color: red;
+}

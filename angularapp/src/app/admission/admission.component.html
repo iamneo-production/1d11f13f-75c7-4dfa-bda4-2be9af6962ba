@@ -1,158 +1,78 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <!-- admission.component.html -->
 <div class="container admission-form-container">
-    <h1 class="text-center mb-5">Student Admission Form</h1>
-    <form [formGroup]="admissionForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
-      <div class="row d-flex align-items-stretch">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="name">Full Name*</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter full name" formControlName="name" 
-              [ngClass]="{ 'is-invalid': name?.invalid && name?.touched, 'is-valid': name?.valid && name?.touched }"
-              data-toggle="tooltip" data-placement="top" [title]="name?.invalid && name?.touched ? 
-              'This field is required and should contain only letters (minimum 3 characters)' : ''"
-              autocomplete="off">
-            </div>
-          <div class="form-group">
-            <label for="fname">Father's Name*</label>
-            <input type="text" class="form-control" id="fname" placeholder="Enter father's name" formControlName="fatherName" 
-            [ngClass]="{ 'is-invalid': fatherName?.invalid && fatherName?.touched, 'is-valid': fatherName?.valid && fatherName?.touched }"
-            data-toggle="tooltip" data-placement="top" [title]="fatherName?.invalid && fatherName?.touched ? 
-            'This field is required and should contain only letters (minimum 3 characters)' : ''"
-            autocomplete="off">
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number*</label>
-            <input type="text" class="form-control" id="phone" placeholder="Enter phone number" formControlName="phoneNumber"
-            [ngClass]="{ 'is-invalid': phoneNumber?.invalid && phoneNumber?.touched, 'is-valid': phoneNumber?.valid && phoneNumber?.touched}"
-            data-toggle="tooltip" data-placement="top" [title]="phoneNumber?.invalid && phoneNumber?.touched ? 
-            'This field is required and should contain 10 digits' : ''"
-            autocomplete="off">
-  
-          </div>
-          
-          <div class="form-group">
-            <label for="email">Email*</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email id" formControlName="email"
-            [ngClass]="{ 'is-invalid': email?.invalid && email?.touched,'is-valid': email?.valid && email?.touched }"
-            data-toggle="tooltip" data-placement="top" [title]="email?.invalid && email?.touched ? 
-            'Please enter a valid email address' : ''"
-            autocomplete="off">
-          </div>
-          <div class="form-group">
-            <label for="qualification">Education Qualification*</label>
-            <select class="form-control custom-select" id="qualification" formControlName="qualification"
-            [ngClass]="{ 'is-invalid': qualification?.invalid && qualification?.touched,'is-valid': qualification?.valid && qualification?.touched}"
-            data-toggle="tooltip" data-placement="top" [title]="qualification?.invalid && qualification?.touched ? 
-            'Please select an education qualification' : ''"
-            autocomplete="off">
-              <option disabled selected value="">Select</option>
-              <option>10th</option>
-              <option>12th</option>
-              <option>Diploma</option>
-              <option>UG</option>
-              <option>PG</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="percentage">Percentage*</label>
-            <input type="number" class="form-control" id="percentage" placeholder="Enter percentage" formControlName="percentage"
-            [ngClass]="{ 'is-invalid': percentage?.invalid && percentage?.touched,'is-valid': percentage?.valid && percentage?.touched }"
-            data-toggle="tooltip" data-placement="top" [title]="percentage?.invalid && percentage?.touched ? 
-            'Number shoule be within 100' : ''"
-            autocomplete="off">
-          </div>
-  
-          <div class="form-group">
-          <label for="correspondingDocuments">Corresponding Documents*</label>
-          <input type="file" class="form-control" id="correspondingDocuments" formControlName="correspondingDocuments"
-            [ngClass]="{
-              'is-invalid': correspondingDocuments?.invalid && correspondingDocuments?.touched,
-              'is-valid': correspondingDocuments?.valid && correspondingDocuments?.touched
-            }"
-            data-toggle="tooltip" data-placement="top" [title]="correspondingDocuments?.invalid && correspondingDocuments?.touched ?
-              'This field is required' : ''"
-            accept=".pdf, .doc, .docx"
-            multiple>
-        </div>
-     
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="passingYear">Passing Year*</label>
-            <input type="number" class="form-control" id="passingYear" placeholder="Enter passing year" formControlName="passingYear"
-              [ngClass]="{
-                'is-invalid': passingYear?.invalid && passingYear?.touched,
-                'is-valid': passingYear?.valid && passingYear?.touched
-              }"
-              data-toggle="tooltip" data-placement="top" [title]="passingYear?.invalid && passingYear?.touched ?
-                'Invalid passing year' : ''"
-              autocomplete="off">
-          </div>
-          
-          <div class="form-group">
-            <label for="dob">Date of Birth*</label>
-            <input type="date" class="form-control" id="dob" placeholder="Enter date of birth" formControlName="dateOfBirth"
-            [ngClass]="{ 'is-invalid': dateOfBirth?.invalid && dateOfBirth?.touched,'is-valid': dateOfBirth?.valid && dateOfBirth?.touched }"
-            data-toggle="tooltip" data-placement="top" [title]="dateOfBirth?.invalid && dateOfBirth?.touched ? 
-            'This field is required' : ''"
-            autocomplete="off">
-          </div>
-          
-          <div class="form-group">
-            <label for="gender">Gender*</label>
-            <select class="form-control custom-select" id="gender" formControlName="gender"
-            [ngClass]="{ 'is-invalid': gender?.invalid && gender?.touched,'is-valid': gender?.valid && gender?.touched }"
-            data-toggle="tooltip" data-placement="top" [title]="gender?.invalid && gender?.touched ? 
-            'Please select a gender' : ''"
-            autocomplete="off">
-              <option disabled selected value="">Select</option>
-              <option>Male</option>
-              <option>Female</option>
-              <option>Other</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="address">Address*</label>
-            <textarea class="form-control" id="address" rows="1" placeholder="Enter full address" formControlName="address"
-            [ngClass]="{ 'is-invalid': address?.invalid && address?.touched,'is-valid': address?.valid && address?.touched }"
-            data-toggle="tooltip" data-placement="top" [title]="address?.invalid && address?.touched ? 
-            'This field is required' : ''"
-            autocomplete="off"></textarea>
-          </div>
-          
-          <div class="form-group">
-            <label for="city">City*</label>
-            <input type="text" class="form-control" id="city" placeholder="Enter city" formControlName="city"
-            [ngClass]="{ 'is-invalid': city?.invalid && city?.touched,'is-valid': city?.valid && city?.touched }"
-            data-toggle="tooltip" data-placement="top" [title]="city?.invalid && city?.touched ? 
-            'This field is required' : ''"
-            autocomplete="off">
-          </div>
-          
-          <div class="form-group">
-            <label for="state">State*</label>
-            <input type="text" class="form-control" id="state" placeholder="Enter state" formControlName="state"
-            [ngClass]="{ 'is-invalid': state?.invalid && state?.touched,'is-valid': state?.valid && state?.touched }"
-            data-toggle="tooltip" data-placement="top" [title]="state?.invalid && state?.touched ? 
-            'This field is required' : ''"
-            autocomplete="off">
-          </div>
-          
-          <div class="form-group">
-            <label for="zipcode">Zip Code*</label>
-            <input type="text" class="form-control" id="zipcode" placeholder="Enter zip code" formControlName="zipcode"
-            [ngClass]="{ 'is-invalid': zipcode?.invalid && zipcode?.touched,'is-valid': zipcode?.valid && zipcode?.touched }"
-            data-toggle="tooltip" data-placement="top" [title]="zipcode?.invalid && zipcode?.touched ? 
-            'This field is required & 6 digit long' : ''"
-            autocomplete="off">
-          </div>
+  <h1 class="text-center mb-5">Student Admission Form</h1>
+  <form [formGroup]="admissionForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate enctype="multipart/form-data">
+    <div class="row d-flex align-items-stretch">
+      <div class="form-group">
+        <label for="name">First Name*</label>
+        <input type="text" class="form-control" id="fname" placeholder="Enter first name" formControlName="fname"
+          [ngClass]="{ 'is-invalid': fname?.invalid && fname?.touched, 'is-valid': fname?.valid && fname?.touched }"
+          autocomplete="off">
+        <div *ngIf="fname?.invalid && fname?.touched" class="invalid-feedback">
+          This field is required and should contain only letters (minimum 3 characters)
         </div>
       </div>
-      <div class="form-group text-center mt-5">
-        <button [disabled]="admissionForm.invalid" type="submit" class="btn btn-primary rounded-pill btn-lg custom-btn">Submit</button>
+      <div class="form-group">
+        <label for="lname">Last Name*</label>
+        <input type="text" class="form-control" id="lname" placeholder="Enter last name" formControlName="lname"
+          [ngClass]="{ 'is-invalid': lname?.invalid && lname?.touched, 'is-valid': lname?.valid && lname?.touched }"
+          autocomplete="off">
+        <div *ngIf="lname?.invalid && lname?.touched" class="invalid-feedback">
+          This field is required and should contain only letters (minimum 3 characters)
+        </div>
       </div>
-    </form>
-  </div>
-  
+      
+      <div class="form-group">
+        <label for="email">Email*</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email id" formControlName="email"
+          [ngClass]="{ 'is-invalid': email?.invalid && email?.touched, 'is-valid': email?.valid && email?.touched }"
+          autocomplete="off">
+        <div *ngIf="email?.invalid && email?.touched" class="invalid-feedback">
+          Please enter a valid email address
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address*</label>
+        <textarea class="form-control" id="address" rows="1" placeholder="Enter full address" formControlName="address"
+          [ngClass]="{ 'is-invalid': address?.invalid && address?.touched, 'is-valid': address?.valid && address?.touched }"
+          autocomplete="off"></textarea>
+        <div *ngIf="address?.invalid && address?.touched" class="invalid-feedback">
+          This field is required
+        </div>
+      </div>       
+
+      <div class="form-group">
+        <label for="phone">Phone Number*</label>
+        <input type="text" class="form-control" id="phone" placeholder="Enter phone number" formControlName="phone"
+          [ngClass]="{ 'is-invalid': phone?.invalid && phone?.touched, 'is-valid': phone?.valid && phone?.touched }"
+          autocomplete="off">
+        <div *ngIf="phone?.invalid && phone?.touched" class="invalid-feedback">
+          This field is required and should contain 10 digits
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="documents">Required Documents*</label>
+        <input type="file" class="form-control" id="documents" formControlName="documents"
+          [ngClass]="{
+            'is-invalid': documents?.invalid && documents?.touched,
+            'is-valid': documents?.valid && documents?.touched
+          }"
+          accept=".pdf"
+          (change)="onFileSelected($event)"
+        >
+        <div *ngIf="documents?.invalid && documents?.touched" class="invalid-feedback">
+          This field is required and max size 60KB
+        </div>
+
+        <div *ngIf="selectedFileSize && selectedFileSize <= 60" class="file-size-feedback">
+        </div>
+      </div>
+
+    </div>
+    <div class="form-group text-center mt-5">
+      <button [disabled]="admissionForm.invalid" type="submit" class="btn btn-primary rounded-pill btn-lg custom-btn">Submit</button>
+    </div>
+  </form>
+</div>

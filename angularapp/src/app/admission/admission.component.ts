@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-admission',
@@ -8,122 +9,140 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AdmissionComponent {
   admissionForm = new FormGroup({
-    name: new FormControl('', [
+    id: new FormControl(0),
+    fname: new FormControl('', [
       Validators.required,
       Validators.pattern('[a-zA-Z ]+$'),
       Validators.maxLength(30),
       Validators.minLength(3)
     ]),
-    fatherName: new FormControl('', [
+    lname: new FormControl('', [
       Validators.required,
       Validators.pattern('[a-zA-Z ]+$'),
       Validators.maxLength(30),
       Validators.minLength(3)
-    ]),
-    phoneNumber: new FormControl('', [
-      Validators.required,
-      Validators.maxLength(10),
-      Validators.minLength(10),
-      Validators.pattern('^[0-9]+$')
     ]),
     email: new FormControl('', [
       Validators.required,
       Validators.email
     ]),
-    dateOfBirth: new FormControl('', [
-      Validators.required
-    ]),
-    gender: new FormControl('', [
-      Validators.required
-    ]),
-    qualification: new FormControl('', [
-      Validators.required
-    ]),
-    percentage: new FormControl('', [
-      Validators.required,
-      Validators.max(100)
-    ]),
-    correspondingDocuments: new FormControl('', [
-      Validators.required
-    ]),
-    passingYear: new FormControl('', [
-      Validators.required,
-      Validators.min(1900),
-      Validators.max(new Date().getFullYear())
-    ]),
     address: new FormControl('', [
       Validators.required
     ]),
-    city: new FormControl('', [
-      Validators.required
-    ]),
-    state: new FormControl('', [
-      Validators.required
-    ]),
-    zipcode: new FormControl('', [
+    phone: new FormControl('', [
       Validators.required,
-      Validators.minLength(6),
-      Validators.maxLength(6)
+      Validators.maxLength(10),
+      Validators.minLength(10),
+      Validators.pattern('^[0-9]+$')
+    ]),
+    documents : new FormControl('', [
+      Validators.required,
+      (control: AbstractControl) => {
+        if (this.isFileSizeExceeded) {
+          return { fileSizeExceeded: true };
+        }
+        return null;
+      }
     ])
+   
   });
 
+  constructor(private http: HttpClient) {}
+
+  selectedFileSize: number | undefined;
+isFileSizeExceeded: boolean = false;
+
+onFileSelected(event: Event) {
+  const fileInput = event.target as HTMLInputElement;
+  if (fileInput.files && fileInput.files.length > 0) {
+    const file = fileInput.files[0];
+    const fileSizeInKB = Math.round(file.size / 1024); // Convert to KB
+    this.selectedFileSize = fileSizeInKB;
+    console.log('Selected file size:', this.selectedFileSize, 'KB');
+
+    if (fileSizeInKB > 60) {
+      console.log('Validation error: File size exceeds 60KB');
+      this.isFileSizeExceeded = false;
+      // Show your validation message here
+    } else {
+      this.isFileSizeExceeded = true;
+    }
+  } else {
+    this.selectedFileSize = undefined;
+    this.isFileSizeExceeded = true;
+  }
+}
+
   onSubmit() {
-    console.warn(this.admissionForm.value);
+    const formData = new FormData();
+    formData.append('id', '0');
+
+    const fname = this.admissionForm.get('fname')!.value;
+    const lname = this.admissionForm.get('lname')!.value;
+    const email = this.admissionForm.get('email')!.value;
+    const address = this.admissionForm.get('address')!.value;
+    const phone = this.admissionForm.get('phone')!.value;
+    const documents = this.admissionForm.get('documents')!.value;
+
+    if (fname) {
+      formData.append('fname', fname);
+    }
+    if (lname) {
+      formData.append('lname', lname);
+    }
+    if (email) {
+      formData.append('email', email);
+    }
+    if (address) {
+      formData.append('address', address);
+    }
+    if (phone) {
+      formData.append('phone', phone);
+    }
+    if (documents) {
+      formData.append('documents', documents);
+    }
+
+    const fileInput = document.getElementById('documents') as HTMLInputElement;
+    if (fileInput.files && fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      formData.append('pdfFile', file);
+    }
+
+    this.http.post('http://localhost:8080/students/store', formData).subscribe(
+      (response) => {
+        console.log(response);
+        alert('Data Saved Successfully');
+        console.log('Form data sent successfully', response);
+        this.admissionForm.reset();
+      },
+      (error) => {
+        console.error('Error while sending form data', error);
+      }
+    );
   }
 
-  get name() {
-    return this.admissionForm.get('name');
+  get fname() {
+    return this.admissionForm.get('fname');
   }
 
-  get fatherName() {
-    return this.admissionForm.get('fatherName');
-  }
-
-  get phoneNumber() {
-    return this.admissionForm.get('phoneNumber');
+  get lname() {
+    return this.admissionForm.get('lname');
   }
 
   get email() {
     return this.admissionForm.get('email');
   }
 
-  get dateOfBirth() {
-    return this.admissionForm.get('dateOfBirth');
-  }
-
-  get gender() {
-    return this.admissionForm.get('gender');
-  }
-
-  get qualification() {
-    return this.admissionForm.get('qualification');
-  }
-
-  get percentage() {
-    return this.admissionForm.get('percentage');
-  }
-
-  get correspondingDocuments() {
-    return this.admissionForm.get('correspondingDocuments');
-  }
-
-  get passingYear() {
-    return this.admissionForm.get('passingYear');
-  }
-
   get address() {
     return this.admissionForm.get('address');
   }
 
-  get city() {
-    return this.admissionForm.get('city');
+  get phone() {
+    return this.admissionForm.get('phone');
   }
 
-  get state() {
-    return this.admissionForm.get('state');
-  }
-
-  get zipcode() {
-    return this.admissionForm.get('zipcode');
+  get documents() {
+    return this.admissionForm.get('documents');
   }
 }
