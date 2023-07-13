@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { AdmissionComponent } from './admission/admission.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
+import { EnrolledCourseComponent } from './enrolled-course/enrolled-course.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdmissionComponent,
-    HeaderComponent
+    HeaderComponent,
+    EnrolledCourseComponent,
   ],
   imports: [
     BrowserModule,
