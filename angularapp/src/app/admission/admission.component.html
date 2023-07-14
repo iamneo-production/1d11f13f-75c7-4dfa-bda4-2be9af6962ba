@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- admission.component.html -->
+<div class="container admission-form-container">
+  <h1 class="text-center mb-5">Student Admission Form</h1>
+  <form [formGroup]="admissionForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate enctype="multipart/form-data">
+    <div class="row d-flex align-items-stretch">
+      <div class="form-group">
+        <label for="name">First Name*</label>
+        <input type="text" class="form-control" id="fname" placeholder="Enter first name" formControlName="fname"
+          [ngClass]="{ 'is-invalid': fname?.invalid && fname?.touched, 'is-valid': fname?.valid && fname?.touched }"
+          autocomplete="off">
+        <div *ngIf="fname?.invalid && fname?.touched" class="invalid-feedback">
+          This field is required and should contain only letters (minimum 3 characters)
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name*</label>
+        <input type="text" class="form-control" id="lname" placeholder="Enter last name" formControlName="lname"
+          [ngClass]="{ 'is-invalid': lname?.invalid && lname?.touched, 'is-valid': lname?.valid && lname?.touched }"
+          autocomplete="off">
+        <div *ngIf="lname?.invalid && lname?.touched" class="invalid-feedback">
+          This field is required and should contain only letters (minimum 3 characters)
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email*</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email id" formControlName="email"
+          [ngClass]="{ 'is-invalid': email?.invalid && email?.touched, 'is-valid': email?.valid && email?.touched }"
+          autocomplete="off">
+        <div *ngIf="email?.invalid && email?.touched" class="invalid-feedback">
+          Please enter a valid email address
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address*</label>
+        <textarea class="form-control" id="address" rows="1" placeholder="Enter full address" formControlName="address"
+          [ngClass]="{ 'is-invalid': address?.invalid && address?.touched, 'is-valid': address?.valid && address?.touched }"
+          autocomplete="off"></textarea>
+        <div *ngIf="address?.invalid && address?.touched" class="invalid-feedback">
+          This field is required
+        </div>
+      </div>       
+
+      <div class="form-group">
+        <label for="phone">Phone Number*</label>
+        <input type="text" class="form-control" id="phone" placeholder="Enter phone number" formControlName="phone"
+          [ngClass]="{ 'is-invalid': phone?.invalid && phone?.touched, 'is-valid': phone?.valid && phone?.touched }"
+          autocomplete="off">
+        <div *ngIf="phone?.invalid && phone?.touched" class="invalid-feedback">
+          This field is required and should contain 10 digits
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="documents">Required Documents*</label>
+        <input type="file" class="form-control" id="documents" formControlName="documents"
+          [ngClass]="{
+            'is-invalid': documents?.invalid && documents?.touched,
+            'is-valid': documents?.valid && documents?.touched
+          }"
+          accept=".pdf"
+          (change)="onFileSelected($event)"
+        >
+        <div *ngIf="documents?.invalid && documents?.touched" class="invalid-feedback">
+          This field is required and max size 60KB
+        </div>
+
+        <div *ngIf="selectedFileSize && selectedFileSize <= 60" class="file-size-feedback">
+        </div>
+      </div>
+
+    </div>
+    <div class="form-group text-center mt-5">
+      <button [disabled]="admissionForm.invalid" type="submit" class="btn btn-primary rounded-pill btn-lg custom-btn">Submit</button>
+    </div>
+  </form>
+</div>
