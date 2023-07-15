@@ -60,3 +60,8 @@ h3{
   box-shadow: 0 0 5px 2px rgba(0, 0, 255, 0.1);
   border-color: blue;
 }
+.not-found-message {
+  font-size: 25px;
+  color: red;
+  margin-top: 10px;
+}
