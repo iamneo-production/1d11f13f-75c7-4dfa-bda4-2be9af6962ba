@@ -25,8 +25,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+<<<<<<< HEAD
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],            
+=======
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
+>>>>>>> 86eb8bcfd11af761e1d7eebfd860407abc405219
             "scripts": []
           },
           "configurations": {
@@ -87,15 +94,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.js"]
           }
         }
       }
     }
   },
   "cli": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     "analytics": "71b1be41-cd68-48bf-bfb4-7d9c9be0d982"
@@ -108,5 +117,17 @@
     "analytics": "71b1be41-cd68-48bf-bfb4-7d9c9be0d982"
 >>>>>>> 470aaa78e0182aea60f5d3d2455abccb40c0fb87
 >>>>>>> d43201f7c8affdd00b12a1db15a3abb6fd41b0a5
+=======
+    "analytics": "0002d3b8-566c-4db3-8682-3c9142f8abef"
+=======
+    "analytics": "71b1be41-cd68-48bf-bfb4-7d9c9be0d982"
+>>>>>>> 6eb583555b8c5aa52d7cc564f62d6f8eaafb204d
+=======
+    "analytics": "c2ecfffc-1802-456d-9510-251c86ce9598"
+=======
+    "analytics": "71b1be41-cd68-48bf-bfb4-7d9c9be0d982"
+>>>>>>> 87a527b21b8021af2aedaf7e1f420454c7bb0b2b
+>>>>>>> 86eb8bcfd11af761e1d7eebfd860407abc405219
+>>>>>>> fb72d6acbbd50c9d51c24a6f165f578af7d4ac90
   }
 }

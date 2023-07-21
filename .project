@@ -24,18 +24,48 @@
 		<filter>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+			<id>1689348666223</id>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+			<id>1682917671738</id>
+=======
+=======
+			<id>1683390864157</id>
+=======
+			<id>1683379328675</id>
+>>>>>>> 5dcddcac647e0aad45ef6c613b7de486a2fc4a8e
+>>>>>>> 86eb8bcfd11af761e1d7eebfd860407abc405219
+=======
+			<id>1683785549853</id>
+=======
+<<<<<<< HEAD
+>>>>>>> 28a19f8aa678563cdbdc9b7dd1b3bb0ad139fb02
+>>>>>>> fb72d6acbbd50c9d51c24a6f165f578af7d4ac90
 			<id>1687764310348</id>
+>>>>>>> 2a87f26c47333e21b31dc5b588d583859f0d7153
 =======
 			<id>1682918513067</id>
 >>>>>>> 52308882187b54e28e4faf089cc30ba2687ab7c0
 =======
 			<id>1683379328675</id>
 >>>>>>> 695328823b8fa3f54ee4e591f837cddf3b2def38
+>>>>>>> 4660c65f1d9bab8f55c79cacc39b342dd17f7ccd
+>>>>>>> 87a527b21b8021af2aedaf7e1f420454c7bb0b2b
+>>>>>>> cf17f044f23715c1920154bb192155525cfcc728
 			<name></name>
 			<type>30</type>
 			<matcher>
 				<id>org.eclipse.core.resources.regexFilterMatcher</id>
+<<<<<<< HEAD
+				<arguments>node_modules|\.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
+=======
 				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
+>>>>>>> cf17f044f23715c1920154bb192155525cfcc728
 			</matcher>
 		</filter>
 	</filteredResources>
