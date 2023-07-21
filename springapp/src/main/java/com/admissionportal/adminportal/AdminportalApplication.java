@@ -1,13 +1,14 @@
-package com.example.springapp;
+package com.admissionportal.adminportal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
-public class SpringappApplication {
+
+public class AdminportalApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringappApplication.class, args);
+		SpringApplication.run(AdminportalApplication.class, args);
 	}
-
 }
