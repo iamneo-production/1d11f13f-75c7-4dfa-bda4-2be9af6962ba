@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-
+import { AdmissionService } from './admission.service';
 
 @Component({
   selector: 'app-admission',
   templateUrl: './admission.component.html',
   styleUrls: ['./admission.component.css']
 })
-export class AdmissionComponent {
+export class AdmissionComponent implements OnInit {
+  courses: string[] = [];
   admissionForm = new FormGroup({
     id: new FormControl(0),
     fname: new FormControl('', [
@@ -36,7 +36,10 @@ export class AdmissionComponent {
       Validators.minLength(10),
       Validators.pattern('^[0-9]+$')
     ]),
-    documents : new FormControl('', [
+    course: new FormControl('', [
+      Validators.required
+    ]),
+    documents: new FormControl('', [
       Validators.required,
       (control: AbstractControl) => {
         if (this.isFileSizeExceeded) {
@@ -45,34 +48,28 @@ export class AdmissionComponent {
         return null;
       }
     ])
-   
   });
 
-  constructor(private http: HttpClient) {}
+  constructor(private admissionService: AdmissionService) {}
 
   selectedFileSize: number | undefined;
-isFileSizeExceeded: boolean = false;
+  isFileSizeExceeded: boolean = false;
 
-onFileSelected(event: Event) {
-  const fileInput = event.target as HTMLInputElement;
-  if (fileInput.files && fileInput.files.length > 0) {
-    const file = fileInput.files[0];
-    const fileSizeInKB = Math.round(file.size / 1024); // Convert to KB
-    this.selectedFileSize = fileSizeInKB;
-    console.log('Selected file size:', this.selectedFileSize, 'KB');
-
-    if (fileSizeInKB > 60) {
-      console.log('Validation error: File size exceeds 60KB');
-      this.isFileSizeExceeded = false;
-      // Show your validation message here
-    } else {
-      this.isFileSizeExceeded = true;
-    }
-  } else {
-    this.selectedFileSize = undefined;
-    this.isFileSizeExceeded = true;
+  ngOnInit() {
+    this.fetchCourses();
   }
-}
+
+  fetchCourses() {
+    this.admissionService.fetchCourses().subscribe(
+      (data) => {
+        console.log(data);
+        this.courses = data.map(course => course.course_name);
+      },
+      (error) => {
+        console.error('Error fetching courses:', error);
+      }
+    );
+  }
 
   onSubmit() {
     const formData = new FormData();
@@ -83,6 +80,7 @@ onFileSelected(event: Event) {
     const email = this.admissionForm.get('email')!.value;
     const address = this.admissionForm.get('address')!.value;
     const phone = this.admissionForm.get('phone')!.value;
+    const course = this.admissionForm.get('course')!.value;
     const documents = this.admissionForm.get('documents')!.value;
 
     if (fname) {
@@ -100,6 +98,9 @@ onFileSelected(event: Event) {
     if (phone) {
       formData.append('phone', phone);
     }
+    if (course) {
+      formData.append('course', course);
+    }
     if (documents) {
       formData.append('documents', documents);
     }
@@ -110,7 +111,7 @@ onFileSelected(event: Event) {
       formData.append('pdfFile', file);
     }
 
-    this.http.post('http://localhost:8080/students/store', formData).subscribe(
+    this.admissionService.submitAdmissionForm(formData).subscribe(
       (response) => {
         console.log(response);
         alert('Data Saved Successfully');
@@ -141,6 +142,10 @@ onFileSelected(event: Event) {
 
   get phone() {
     return this.admissionForm.get('phone');
+  }
+
+  get course() {
+    return this.admissionForm.get('course');
   }
 
   get documents() {
