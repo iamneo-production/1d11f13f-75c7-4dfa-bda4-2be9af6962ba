@@ -25,7 +25,12 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "src/styles.css"
+=======
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
+>>>>>>> 3c1fdedaa01598ce26c117916c4d433efa8ca571
             ],
             "scripts": []
           },
@@ -96,6 +101,12 @@
     }
   },
   "cli": {
+<<<<<<< HEAD
     "analytics": "775956fd-1ad5-4491-8336-72a809f5c57a"
   }
 }
+=======
+    "analytics": false
+  }
+  }
+>>>>>>> 3c1fdedaa01598ce26c117916c4d433efa8ca571
