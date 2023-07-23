@@ -8,11 +8,15 @@ import {MatIconModule} from "@angular/material/icon";
 import { RouterModule,Routes } from '@angular/router';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterFormComponent,
+    ResetpasswordComponent,
+    ProfileComponent,
   
   ],
   imports: [

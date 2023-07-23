@@ -36,9 +36,9 @@ export class RegisterFormService {
       );
   }
 
-  checkContactnoExists(contactno: string): Observable<boolean> {
+  checkphoneNumberExists(phoneNumber: string): Observable<boolean> {
     return this.http
-      .get<boolean>(`http://localhost:8080/home/check-contactno/${contactno}`)
+      .get<boolean>(`http://localhost:8080/home/check-phoneNumber/${phoneNumber}`)
       .pipe(
         catchError(() => {
           // Handle error if needed
