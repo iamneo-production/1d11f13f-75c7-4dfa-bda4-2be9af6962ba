@@ -3,7 +3,7 @@
   <h1 class="text-center mb-5">Student Admission Form</h1>
   <form [formGroup]="admissionForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate enctype="multipart/form-data">
     <div class="row d-flex align-items-stretch">
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="name">First Name*</label>
         <input type="text" class="form-control" id="firstName" placeholder="Enter first name" formControlName="firstName"
           [ngClass]="{ 'is-invalid': firstName?.invalid && firstName?.touched, 'is-valid': firstName?.valid && firstName?.touched }"
@@ -50,7 +50,7 @@
         <div *ngIf="phoneNumber?.invalid && phoneNumber?.touched" class="invalid-feedback">
           This field is required and should contain 10 digits
         </div>
-      </div>
+      </div> -->
       <div class="form-group">
         <label for="documents">Required Documents*</label>
         <input type="file" class="form-control" id="documents" formControlName="documents"
@@ -84,3 +84,8 @@
     </div>
   </form>
 </div>
+
+<div class="application-status-btn-container">
+  <button type="button" class="btn btn-secondary rounded-pill btn-lg custom-btn" (click)="checkApplicationStatus()" >Application Status</button>
+</div>
+

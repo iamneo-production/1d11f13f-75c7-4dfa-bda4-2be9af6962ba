@@ -6,8 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
 
 @Entity
 @Table(name = "admission")
@@ -17,26 +17,14 @@ public class Admission {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "firstName")
-    private String firstName;
-
-    @Column(name = "lastName")
-    private String lastName;
-
-    @Column(name = "email")
-    private String email;
-
-    @Column(name = "address")
-    private String address;
-
-    @Column(name = "phoneNumber")
-    private String phoneNumber;
-
-    @Column(name = "course")
-    private String course;
+    @OneToOne
+    private Student student;
 
     @Column(name = "status")
     private String status;
+
+    @Column(name = "course")
+    private String course;
 
     @Lob
     @Column(name = "requiredDocuments", columnDefinition = "LONGBLOB")
@@ -45,18 +33,15 @@ public class Admission {
     public Admission() {
     }
 
-    public Admission(int id, String firstName, String lastName, String email, String address, String phoneNumber,
-            String course, String status, byte[] requiredDocuments) {
+    public Admission(int id, Student student, String status, byte[] requiredDocuments, String course) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
-        this.course = course;
+        this.student = student;
         this.status = status;
         this.requiredDocuments = requiredDocuments;
+        this.course = course;
     }
+
+    // Getters and setters
 
     public int getId() {
         return id;
@@ -66,57 +51,19 @@ public class Admission {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getCourse() {
-        return course;
-    }
-
-    public void setCourse(String course) {
-        this.course = course;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     public String getStatus() {
         return status;
     }
+    
+    
 
     public void setStatus(String status) {
         this.status = status;
@@ -129,5 +76,12 @@ public class Admission {
     public void setRequiredDocuments(byte[] requiredDocuments) {
         this.requiredDocuments = requiredDocuments;
     }
-    
+
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
+    }
 }
