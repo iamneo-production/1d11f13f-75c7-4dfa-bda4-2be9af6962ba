@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-com/example/springapp/controller/CourseController.class
-com/example/springapp/model/Course.class
-com/example/springapp/service/CourseService.class
-com/example/springapp/repository/CourseRepo.class
-=======
 com/example/springapp/SpringappApplication.class
-com/example/springapp/service/StudentService.class
 com/example/springapp/model/Student.class
 com/example/springapp/repository/StudentRepo.class
+com/example/springapp/model/Course.class
+com/example/springapp/repository/CourseRepo.class
+com/example/springapp/service/StudentService.class
+com/example/springapp/controller/CourseController.class
+com/example/springapp/service/CourseService.class
 com/example/springapp/controller/StudentController.class
->>>>>>> 381469bef0b7049c7392c62f15c83939379ac8c5
