@@ -11,13 +11,13 @@ export class AdmissionComponent implements OnInit {
   courses: string[] = [];
   admissionForm = new FormGroup({
     id: new FormControl(0),
-    fname: new FormControl('', [
+    firstName: new FormControl('', [
       Validators.required,
       Validators.pattern('[a-zA-Z ]+$'),
       Validators.maxLength(30),
       Validators.minLength(3)
     ]),
-    lname: new FormControl('', [
+    lastName: new FormControl('', [
       Validators.required,
       Validators.pattern('[a-zA-Z ]+$'),
       Validators.maxLength(30),
@@ -30,7 +30,7 @@ export class AdmissionComponent implements OnInit {
     address: new FormControl('', [
       Validators.required
     ]),
-    phone: new FormControl('', [
+    phoneNumber: new FormControl('', [
       Validators.required,
       Validators.maxLength(10),
       Validators.minLength(10),
@@ -63,7 +63,7 @@ export class AdmissionComponent implements OnInit {
     this.admissionService.fetchCourses().subscribe(
       (data) => {
         console.log(data);
-        this.courses = data.map(course => course.course_name);
+        this.courses = data.map(course => course.name);
       },
       (error) => {
         console.error('Error fetching courses:', error);
@@ -75,19 +75,19 @@ export class AdmissionComponent implements OnInit {
     const formData = new FormData();
     formData.append('id', '0');
 
-    const fname = this.admissionForm.get('fname')!.value;
-    const lname = this.admissionForm.get('lname')!.value;
+    const firstName = this.admissionForm.get('firstName')!.value;
+    const lastName = this.admissionForm.get('lastName')!.value;
     const email = this.admissionForm.get('email')!.value;
     const address = this.admissionForm.get('address')!.value;
-    const phone = this.admissionForm.get('phone')!.value;
+    const phoneNumber = this.admissionForm.get('phoneNumber')!.value;
     const course = this.admissionForm.get('course')!.value;
     const documents = this.admissionForm.get('documents')!.value;
 
-    if (fname) {
-      formData.append('fname', fname);
+    if (firstName) {
+      formData.append('firstName', firstName);
     }
-    if (lname) {
-      formData.append('lname', lname);
+    if (lastName) {
+      formData.append('lastName', lastName);
     }
     if (email) {
       formData.append('email', email);
@@ -95,8 +95,8 @@ export class AdmissionComponent implements OnInit {
     if (address) {
       formData.append('address', address);
     }
-    if (phone) {
-      formData.append('phone', phone);
+    if (phoneNumber) {
+      formData.append('phoneNumber', phoneNumber);
     }
     if (course) {
       formData.append('course', course);
@@ -124,12 +124,12 @@ export class AdmissionComponent implements OnInit {
     );
   }
 
-  get fname() {
-    return this.admissionForm.get('fname');
+  get firstName() {
+    return this.admissionForm.get('firstName');
   }
 
-  get lname() {
-    return this.admissionForm.get('lname');
+  get lastName() {
+    return this.admissionForm.get('lastName');
   }
 
   get email() {
@@ -140,8 +140,8 @@ export class AdmissionComponent implements OnInit {
     return this.admissionForm.get('address');
   }
 
-  get phone() {
-    return this.admissionForm.get('phone');
+  get phoneNumber() {
+    return this.admissionForm.get('phoneNumber');
   }
 
   get course() {

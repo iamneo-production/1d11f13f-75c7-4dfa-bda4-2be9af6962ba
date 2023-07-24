@@ -1,0 +1,8 @@
+com/example/springapp/model/Course.class
+com/example/springapp/model/Admission.class
+com/example/springapp/service/AdmissionService.class
+com/example/springapp/repository/CourseRepo.class
+com/example/springapp/controller/AdmissionController.class
+com/example/springapp/controller/CourseController.class
+com/example/springapp/service/CourseService.class
+com/example/springapp/repository/AdmissionRepo.class

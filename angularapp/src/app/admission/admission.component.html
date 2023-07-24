@@ -5,19 +5,19 @@
     <div class="row d-flex align-items-stretch">
       <div class="form-group">
         <label for="name">First Name*</label>
-        <input type="text" class="form-control" id="fname" placeholder="Enter first name" formControlName="fname"
-          [ngClass]="{ 'is-invalid': fname?.invalid && fname?.touched, 'is-valid': fname?.valid && fname?.touched }"
+        <input type="text" class="form-control" id="firstName" placeholder="Enter first name" formControlName="firstName"
+          [ngClass]="{ 'is-invalid': firstName?.invalid && firstName?.touched, 'is-valid': firstName?.valid && firstName?.touched }"
           autocomplete="off">
-        <div *ngIf="fname?.invalid && fname?.touched" class="invalid-feedback">
+        <div *ngIf="firstName?.invalid && firstName?.touched" class="invalid-feedback">
           This field is required and should contain only letters (minimum 3 characters)
         </div>
       </div>
       <div class="form-group">
         <label for="lname">Last Name*</label>
-        <input type="text" class="form-control" id="lname" placeholder="Enter last name" formControlName="lname"
-          [ngClass]="{ 'is-invalid': lname?.invalid && lname?.touched, 'is-valid': lname?.valid && lname?.touched }"
+        <input type="text" class="form-control" id="lastName" placeholder="Enter last name" formControlName="lastName"
+          [ngClass]="{ 'is-invalid': lastName?.invalid && lastName?.touched, 'is-valid': lastName?.valid && lastName?.touched }"
           autocomplete="off">
-        <div *ngIf="lname?.invalid && lname?.touched" class="invalid-feedback">
+        <div *ngIf="lastName?.invalid && lastName?.touched" class="invalid-feedback">
           This field is required and should contain only letters (minimum 3 characters)
         </div>
       </div>
@@ -44,10 +44,10 @@
 
       <div class="form-group">
         <label for="phone">Phone Number*</label>
-        <input type="text" class="form-control" id="phone" placeholder="Enter phone number" formControlName="phone"
-          [ngClass]="{ 'is-invalid': phone?.invalid && phone?.touched, 'is-valid': phone?.valid && phone?.touched }"
+        <input type="text" class="form-control" id="phoneNumber" placeholder="Enter phone number" formControlName="phoneNumber"
+          [ngClass]="{ 'is-invalid': phoneNumber?.invalid && phoneNumber?.touched, 'is-valid': phoneNumber?.valid && phoneNumber?.touched }"
           autocomplete="off">
-        <div *ngIf="phone?.invalid && phone?.touched" class="invalid-feedback">
+        <div *ngIf="phoneNumber?.invalid && phoneNumber?.touched" class="invalid-feedback">
           This field is required and should contain 10 digits
         </div>
       </div>

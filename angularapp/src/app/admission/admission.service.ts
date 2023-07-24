@@ -6,12 +6,12 @@ import { FormGroup } from '@angular/forms';
   providedIn: 'root'
 })
 export class AdmissionService {
-  private apiUrl = 'http://localhost:8080';
+  private apiUrl = 'https://8080-eafbfbdbbdebcefbeacfaceadeaeaadbdbabf.project.examly.io';
 
   constructor(private http: HttpClient) {}
 
   fetchCourses() {
-    const apiUrl = `${this.apiUrl}/getAllCourses`;
+    const apiUrl = `${this.apiUrl}/courses`;
     return this.http.get<any[]>(apiUrl);
   }
 
@@ -20,6 +20,6 @@ export class AdmissionService {
   }
 
   submitAdmissionForm(formData: FormData) {
-    return this.http.post(`${this.apiUrl}/students/store`, formData);
+    return this.http.post(`${this.apiUrl}/admission`, formData);
   }
 }
