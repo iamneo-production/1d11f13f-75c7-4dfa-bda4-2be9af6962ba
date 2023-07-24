@@ -12,6 +12,11 @@ import { EnrolledCourseComponent } from './enrolled-course/enrolled-course.compo
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { CourseComponent } from './course/course.component';
+import { CourselistComponent } from './coursemanagement/courselist/courselist.component';
+import { AddcourseComponent } from './coursemanagement/addcourse/addcourse.component';
+import { UpdatecourseComponent } from './coursemanagement/updatecourse/updatecourse.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CourseviewComponent } from './coursemanagement/courseview/courseview.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,12 @@ import { CourseComponent } from './course/course.component';
     EnrolledCourseComponent,
     CourseDetailsComponent,
     RegisterFormComponent,
-    CourseComponent
+    CourseComponent,
+    CourselistComponent,
+    AddcourseComponent,
+    UpdatecourseComponent,
+    NavbarComponent,
+    CourseviewComponent
   ],
   imports: [
     BrowserModule,

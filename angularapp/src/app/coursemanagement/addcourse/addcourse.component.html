@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="body">
+      <form class="mt-2" (ngSubmit)="onSubmit()" #courseForm="ngForm" novalidate>
+        <h4 class="text-center font-weight-bold">ADD COURSE</h4>
+        <br>
+  
+        <div class="form-group mt-1">
+          <input type="text" class="form-control" id="coursename" placeholder="coursename" name="coursename"
+            [(ngModel)]="addcourse.name" required>
+          <br>
+          <div *ngIf="courseForm.controls['coursename'].invalid && (courseForm.controls['coursename'].dirty || courseForm.controls['coursename'].touched)">
+            <div class="alerts">Course name is required.</div>
+            <br>
+          </div>
+        </div>
+  
+        <div class="form-group mt-1">
+          <input type="text" class="form-control" id="coursedescription" placeholder="coursedescription"
+            name="coursedescription" [(ngModel)]="addcourse.description" required>
+          <br>
+          <div *ngIf="courseForm.controls['coursedescription'].invalid && (courseForm.controls['coursedescription'].dirty || courseForm.controls['coursedescription'].touched)">
+            <div class="alerts">Course description is required.</div>
+            <br>
+          </div>
+        </div>
+  
+        <div class="form-group mt-1">
+          <input type="text" class="form-control" id="courseprerequisites" placeholder="courseprerequisites"
+            name="courseprerequisites" [(ngModel)]="addcourse.prerequisites" required>
+          <br>
+          <div *ngIf="courseForm.controls['courseprerequisites'].invalid && (courseForm.controls['courseprerequisites'].dirty || courseForm.controls['courseduration'].touched)">
+            <div class="alerts">Course duration is required.</div>
+            <br>
+          </div>
+          </div>
+        <div class="form-group mt-1">
+          <input type="text" class="form-control" id="coursecredits" placeholder="coursecredits"
+            name="coursecredits" [(ngModel)]="addcourse.credits" required>
+          <br>
+          <div *ngIf="courseForm.controls['coursecredits'].invalid && (courseForm.controls['coursecredits'].dirty || courseForm.controls['courseduration'].touched)">
+            <div class="alerts">Course duration is required.</div>
+            <br>
+          </div>
+        </div>
+  
+        <button class="btn btn-primary mt-2 mb-3" style="background-color:rgb(240, 240, 255);color:black;float:left;"
+          [disabled]="courseForm.invalid">Add</button>
+  
+        <button class="btn btn-primary mt-2 mb-3" style="background-color:rgb(233, 233, 241); color:black;float:right;"
+          routerLink="/courseview">Back</button>
+      </form>
+    </div>
+  </div>
+  

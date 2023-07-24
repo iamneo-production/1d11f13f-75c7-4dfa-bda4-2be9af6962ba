@@ -1,0 +1,30 @@
+
+<div class="container">
+    <div class="body">
+      <form class="mt-2" (ngSubmit)="onSubmit()" #courseForm="ngForm" novalidate>
+        <h4 class="text-center font-weight-bold">UPDATE COURSE</h4>
+        <br>
+  
+        <div class="form-group mt-1">
+          <input type="text" class="form-control" id="coursename" placeholder="coursename" name="coursename" [(ngModel)]="addcourse.name">
+          <br>
+        </div>
+  
+        <div class="form-group mt-1">
+          <input type="text" class="form-control" id="coursedescription" placeholder="coursedescription" name="coursedescription" [(ngModel)]="addcourse.description">
+          <br>
+        </div>
+  
+        <div class="form-group mt-1">
+          <input type="text" class="form-control" id="courseprerequisites" placeholder="courseprerequisites" name="courseprerequisites" [(ngModel)]="addcourse.prerequisites">
+          <br>
+        </div>
+        <div class="form-group mt-1">
+          <input type="text" class="form-control" id="coursecredits" placeholder="coursecredits" name="coursecredits" [(ngModel)]="addcourse.credits">
+          <br>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  
