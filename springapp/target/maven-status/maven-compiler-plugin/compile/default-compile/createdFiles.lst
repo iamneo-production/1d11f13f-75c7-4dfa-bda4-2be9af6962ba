@@ -1,0 +1,5 @@
+com/example/springapp/SpringappApplication.class
+com/example/springapp/service/StudentService.class
+com/example/springapp/model/Student.class
+com/example/springapp/repository/StudentRepo.class
+com/example/springapp/controller/StudentController.class

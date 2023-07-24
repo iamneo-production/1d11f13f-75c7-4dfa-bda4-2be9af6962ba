@@ -8,6 +8,9 @@ import { AdmissionComponent } from './admission/admission.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { EnrolledCourseComponent } from './enrolled-course/enrolled-course.component';
+import { StudentListComponent } from './student-list/student-list.component';
+import { AddStudentComponent } from './add-student/add-student.component';
+import { UpdateStudentComponent } from './update-student/update-student.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,9 @@ import { EnrolledCourseComponent } from './enrolled-course/enrolled-course.compo
     AdmissionComponent,
     HeaderComponent,
     EnrolledCourseComponent,
+    StudentListComponent,
+    AddStudentComponent,
+    UpdateStudentComponent,
   ],
   imports: [
     BrowserModule,
