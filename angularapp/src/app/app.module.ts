@@ -9,6 +9,7 @@ import { AdmissionComponent } from './admission/admission.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { EnrolledCourseComponent } from './enrolled-course/enrolled-course.component';
+<<<<<<< HEAD
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { CourseComponent } from './course/course.component';
@@ -17,6 +18,11 @@ import { AddcourseComponent } from './coursemanagement/addcourse/addcourse.compo
 import { UpdatecourseComponent } from './coursemanagement/updatecourse/updatecourse.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CourseviewComponent } from './coursemanagement/courseview/courseview.component';
+=======
+import { StudentListComponent } from './student-list/student-list.component';
+import { AddStudentComponent } from './add-student/add-student.component';
+import { UpdateStudentComponent } from './update-student/update-student.component';
+>>>>>>> 381469bef0b7049c7392c62f15c83939379ac8c5
 
 @NgModule({
   declarations: [
@@ -24,6 +30,7 @@ import { CourseviewComponent } from './coursemanagement/courseview/courseview.co
     AdmissionComponent,
     HeaderComponent,
     EnrolledCourseComponent,
+<<<<<<< HEAD
     CourseDetailsComponent,
     RegisterFormComponent,
     CourseComponent,
@@ -32,6 +39,11 @@ import { CourseviewComponent } from './coursemanagement/courseview/courseview.co
     UpdatecourseComponent,
     NavbarComponent,
     CourseviewComponent
+=======
+    StudentListComponent,
+    AddStudentComponent,
+    UpdateStudentComponent,
+>>>>>>> 381469bef0b7049c7392c62f15c83939379ac8c5
   ],
   imports: [
     BrowserModule,

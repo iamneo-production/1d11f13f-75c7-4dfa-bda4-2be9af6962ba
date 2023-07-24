@@ -1,1 +1,5 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/SpringappApplication.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/StudentController.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/StudentService.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/StudentRepo.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Student.java
