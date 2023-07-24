@@ -50,8 +50,8 @@ const routes: Routes = [
   {path:'students',component:StudentListComponent},
   {path:'add-student',component:AddStudentComponent},
   {path:'update-student/:id',component:UpdateStudentComponent},
-  {path:'student-details/:id',component:StudentDetailsComponent},
-  {path:'',redirectTo:'students',pathMatch:'full'}
+  {path:'student-details/:id',component:StudentDetailsComponent}
+  // {path:'',redirectTo:'students',pathMatch:'full'}
 ];
 
 @NgModule({
