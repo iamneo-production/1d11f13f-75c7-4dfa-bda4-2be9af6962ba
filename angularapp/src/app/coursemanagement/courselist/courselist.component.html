@@ -1,8 +1,13 @@
+<app-navbar></app-navbar>
 <div class="container">
     <form class="form-inline mt-4 forms">
+      <div>
       <a routerLink="/addcourse" class="btn btn-primary" style="background-color:white; color:black;">Add Course</a>
+    </div>
+ 
       <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="width:30%;"
              [(ngModel)]="searchText" [ngModelOptions]="{ standalone: true }" (input)="onSearch()">
+ 
     </form>
   
     <hr>

@@ -26,11 +26,24 @@ export class CourseComponent {
     private sanitizer: DomSanitizer
     ) {}
 
-  get filteredCourses(): Course[] {
-  return this.courses.filter(course => course.name.toLowerCase().includes(this.searchText.toLowerCase()));
-  }
-
-
+  
+    get filteredCourses(): Course[] {
+      return this.courses.filter(course => course.name.toLowerCase().includes(this.searchText.toLowerCase()));
+      }
+      onSearch() {
+        if (this.searchText.trim() !== '') {
+          this.courses = this.courses.filter((ac) =>
+            ac.name.toLowerCase().includes(this.searchText.toLowerCase())
+          );
+        } else {
+          this.getAllCourse(); // Reset the course list to show all courses when search input is empty.
+        }
+      }
+      private getAllCourse(){
+        this.courseService.getCourseList().subscribe(data=> {
+          this.courses = data;
+        })
+      }
   ngOnInit(): void {
     //this.courses = this.courseService.getAllCourse();
     this.courseService.getAllCourse().subscribe(data => {

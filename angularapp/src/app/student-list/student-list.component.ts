@@ -10,6 +10,7 @@ import { Student } from '../class/student';
 })
 export class StudentListComponent {
   students: Student[] = [];
+  searchText: any;
 
   constructor(private studentService: StudentService,
     private router: Router) { }
@@ -34,6 +35,24 @@ export class StudentListComponent {
       alert(" Student deleted successfully!");
     })
   }
+  
+  get filteredCourses(): Student[] {
+    return this.students.filter(students => students.firstName.toLowerCase().includes(this.searchText.toLowerCase()));
+    }
+    onSearch() {
+      if (this.searchText.trim() !== '') {
+        this.students = this.students.filter((ac) =>
+          ac.firstName.toLowerCase().includes(this.searchText.toLowerCase())
+        );
+      } else {
+        this.getAllCourse(); // Reset the course list to show all courses when search input is empty.
+      }
+    }
+    private getAllCourse(){
+      this.studentService.getstudentslist().subscribe(data=> {
+        this.students = data;
+      })
+    }
 
 
 }

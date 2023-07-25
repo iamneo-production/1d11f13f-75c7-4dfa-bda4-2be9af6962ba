@@ -20,6 +20,9 @@ import { CourseviewComponent } from './coursemanagement/courseview/courseview.co
 import { StudentListComponent } from './student-list/student-list.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { UpdateStudentComponent } from './update-student/update-student.component';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { UpdateStudentComponent } from './update-student/update-student.componen
     StudentListComponent,
     AddStudentComponent,
     UpdateStudentComponent,
+    LoginComponent,
+    ProfileComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
