@@ -11,31 +11,7 @@ export class AdmissionComponent implements OnInit {
   courses: string[] = [];
   admissionForm = new FormGroup({
     id: new FormControl(0),
-    // firstName: new FormControl('', [
-    //   Validators.required,
-    //   Validators.pattern('[a-zA-Z ]+$'),
-    //   Validators.maxLength(30),
-    //   Validators.minLength(3)
-    // ]),
-    // lastName: new FormControl('', [
-    //   Validators.required,
-    //   Validators.pattern('[a-zA-Z ]+$'),
-    //   Validators.maxLength(30),
-    //   Validators.minLength(3)
-    // ]),
-    // email: new FormControl('', [
-    //   Validators.required,
-    //   Validators.email
-    // ]),
-    // address: new FormControl('', [
-    //   Validators.required
-    // ]),
-    // phoneNumber: new FormControl('', [
-    //   Validators.required,
-    //   Validators.maxLength(10),
-    //   Validators.minLength(10),
-    //   Validators.pattern('^[0-9]+$')
-    // ]),
+
     course: new FormControl('', [
       Validators.required
     ]),
@@ -78,30 +54,9 @@ export class AdmissionComponent implements OnInit {
   onSubmit() {
     const formData = new FormData();
     formData.append('id', '0');
-
-    // const firstName = this.admissionForm.get('firstName')!.value;
-    // const lastName = this.admissionForm.get('lastName')!.value;
-    // const email = this.admissionForm.get('email')!.value;
-    // const address = this.admissionForm.get('address')!.value;
-    // const phoneNumber = this.admissionForm.get('phoneNumber')!.value;
     const course = this.admissionForm.get('course')!.value;
     const documents = this.admissionForm.get('documents')!.value;
 
-    // if (firstName) {
-    //   formData.append('firstName', firstName);
-    // }
-    // if (lastName) {
-    //   formData.append('lastName', lastName);
-    // }
-    // if (email) {
-    //   formData.append('email', email);
-    // }
-    // if (address) {
-    //   formData.append('address', address);
-    // }
-    // if (phoneNumber) {
-    //   formData.append('phoneNumber', phoneNumber);
-    // }
     if (course) {
       formData.append('course', course);
     }
@@ -128,25 +83,7 @@ export class AdmissionComponent implements OnInit {
     );
   }
 
-  // get firstName() {
-  //   return this.admissionForm.get('firstName');
-  // }
-
-  // get lastName() {
-  //   return this.admissionForm.get('lastName');
-  // }
-
-  // get email() {
-  //   return this.admissionForm.get('email');
-  // }
-
-  // get address() {
-  //   return this.admissionForm.get('address');
-  // }
-
-  // get phoneNumber() {
-  //   return this.admissionForm.get('phoneNumber');
-  // }
+ 
 
   get course() {
     return this.admissionForm.get('course');

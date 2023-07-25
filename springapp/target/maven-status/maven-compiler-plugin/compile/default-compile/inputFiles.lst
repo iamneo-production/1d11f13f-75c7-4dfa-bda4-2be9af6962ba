@@ -1,9 +1,13 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/SpringappApplication.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/CourseController.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/CourseService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Course.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/AdmissionController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/CourseRepo.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/StudentController.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/CourseService.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/AdmissionController.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/StudentService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/AdmissionService.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/StudentRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/AdmissionRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Admission.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Student.java
