@@ -20,7 +20,7 @@ import { UpdateStudentComponent } from './update-student/update-student.componen
     EnrolledCourseComponent,
     StudentListComponent,
     AddStudentComponent,
-    UpdateStudentComponent,
+    UpdateStudentComponent
   ],
   imports: [
     BrowserModule,
