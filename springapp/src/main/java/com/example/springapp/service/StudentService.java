@@ -16,6 +16,7 @@ public class StudentService {
     public List<Student> getAllStudents() {
         return userRepo.findAll();
     }
+    
 
     public Student createStudent(Student student) {
         return userRepo.save(student);

@@ -23,6 +23,9 @@ import { UpdateStudentComponent } from './update-student/update-student.componen
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
+
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -44,6 +47,8 @@ import { ContactComponent } from './contact/contact.component';
     LoginComponent,
     ProfileComponent,
     ContactComponent,
+    StudentDetailsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -51,6 +56,7 @@ import { ContactComponent } from './contact/contact.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    MatIconModule,
     CommonModule
   ],
   providers: [],

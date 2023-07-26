@@ -1,8 +1,10 @@
 <app-navbar></app-navbar>
-<div class="container"><h1 class="text-center">List of students</h1>
+
+<div class="container" style="background-color: #234E70;">
+    <div style="color: white;"><h1 class="text-center">List of students</h1></div>
     <br>
     <a routerLink="/add-student" class="btn btn-primary" style="background-color:white; color:black;">Add Student</a>
-    <input class="form-control float-right" type="search" placeholder="Search" aria-label="Search" style="width:30%;"
+    <input class="form-control float-right" type="search" placeholder="Type here to search the student" aria-label="Search" style="width:30%;"
     [(ngModel)]="searchText" [ngModelOptions]="{ standalone: true }" (input)="onSearch()">
 <br>
 <br>
@@ -13,7 +15,7 @@
             <th> First Name </th>
             <th> Last Name </th>
             <th> Email </th>
-            <th> Password </th>
+            <!-- <th> Password </th> -->
             <th> Address </th>
             <th>Phone Number</th>
             <th> Actions </th>
@@ -25,7 +27,7 @@
             <td> {{ student.firstName }} </td>
             <td> {{ student.lastName }} </td>
             <td> {{ student.email }} </td>
-            <td>{{ student.password }}</td>
+            <!-- <td>{{ student.password }}</td> -->
             <td>{{ student.address }}</td>
             <td>{{ student.phoneNumber }}</td>
             <td>

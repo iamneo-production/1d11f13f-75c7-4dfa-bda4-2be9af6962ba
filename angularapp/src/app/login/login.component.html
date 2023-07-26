@@ -1,7 +1,9 @@
 <form (ngSubmit)="login()" [formGroup]="loginForm">
     <div class="input-container">
       <!-- Email input -->
+      
       <label for="email"><b>Email Address</b></label>
+      
       <div class="email-input">
         <input type="text"autocomplete="username" placeholder="Enter Email Address" formControlName="email"  required/>
         <span class="icon-envelope"><i class="bi bi-envelope"></i></span>
@@ -25,13 +27,13 @@
     
   
     <!-- Forgot password and Register here section -->
-    <div class="forgot-register-section">
+    <!-- <div class="forgot-register-section">
       <div class="forgot-password">
         <a routerLink="/resetpassword">Forgot Password</a>
-      </div>
+      </div> -->
       <div class="register-message">
         <span>Don't have an account? </span><a href="/register-form">Register here</a>
       </div>
-    </div>
+    <!-- </div> -->
   
     <!-- Success message -->

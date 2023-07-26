@@ -16,6 +16,8 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
+// import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+
 
 
 

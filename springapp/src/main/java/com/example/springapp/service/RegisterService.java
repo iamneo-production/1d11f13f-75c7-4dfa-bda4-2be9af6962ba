@@ -5,6 +5,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+// import javax.xml.stream.events.StartDocument;
+
 import com.example.springapp.dto.RegisterDto;
 import com.example.springapp.model.Student;
 import com.example.springapp.repository.RegisterRepo;
@@ -14,6 +16,8 @@ public class RegisterService {
 
     @Autowired
     private final RegisterRepo regRepo;
+
+    @Autowired
     private final PasswordEncoder passwordEncoder;
 
     
@@ -46,5 +50,35 @@ public class RegisterService {
         );
         regRepo.save(user);
         return user.getFirstName();
+     }
+     private RegisterDto convertToDto(Student user) {
+        RegisterDto registerDto = new RegisterDto();
+        registerDto.setPassword(user.getPassword());
+        // Set other properties as needed
+        return registerDto;
+    }
+
+//         public RegisterDto updatePassword(String email, String newPassword) {
+//             Student user = regRepo.findByEmail(email);
+//             if (user == null) {
+//                 return null;
+//             }
+//             String encryptedPassword = encryptPassword(newPassword);
+//             user.setPassword(encryptedPassword);
+//             regRepo.save(user);
+//             RegisterDto updatedRegisterDto = convertToDto(user);
+//             return updatedRegisterDto;
+// }
+
+    public RegisterDto updatePassword(String email, String newPassword) {
+    Student user = regRepo.findByEmail(email);
+    if (user == null) {
+        return null;
+    }
+    String encryptedPassword = encryptPassword(newPassword);
+    user.setPassword(encryptedPassword);
+    regRepo.save(user);
+    return convertToDto(user); // Directly return the converted DTO
 }
+     
 }

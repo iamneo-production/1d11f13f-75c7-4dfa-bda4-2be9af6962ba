@@ -1,26 +1,18 @@
-<!-- <app-navbar></app-navbar> -->
-<div class="container ">
-    <h3 class="text-center"> View Student Details</h3>
-    <div class="d-flex justify-content-center align-items-center height: 100vh mt-5">
-<div>
-    <div>
-        <label> <b> First Name: </b></label> {{student?.firstName}}
+<app-navbar></app-navbar>
+<div class="container">
+  <h5 class="text-center">STUDENT DETAILS</h5>
+  <div class="d-flex justify-content-center align-items-center height: 100vh mt-5">
+  <div class="card" style="width: 28rem;">
+
+    <div class="card-body">
+      <p>Student First Name : {{student?.firstName}}</p>
+      <p>Student Last Name : {{student?.lastName}}</p>
+      <p>Student Email : {{student?.email}}</p>
+      <!-- <p>Student Password : {{student?.password}}</p> -->
+      <p>Student Address : {{student?.address}}</p>
+      <p>Student Phone Number : {{student?.phoneNumber}}</p>
+
     </div>
-    <div>
-        <label> <b> Last Name: </b></label> {{student?.lastName}}
-    </div>
-    <div>
-        <label> <b> Email: </b></label> {{student?.email}}
-    </div>
-    <div>
-        <label> <b> Address:: </b></label> {{student?.address}}
-    </div>
-    <div>
-        <label> <b> Phone Number: </b></label> {{student?.phoneNumber}}
-    </div>
-    <div>
-        <label> <b> Password:  </b></label> {{student?.password}}
-    </div>
-</div>
-</div>
-</div>
+  </div>
+  </div>
+  </div>
