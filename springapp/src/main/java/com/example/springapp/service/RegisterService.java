@@ -58,18 +58,6 @@ public class RegisterService {
         return registerDto;
     }
 
-//         public RegisterDto updatePassword(String email, String newPassword) {
-//             Student user = regRepo.findByEmail(email);
-//             if (user == null) {
-//                 return null;
-//             }
-//             String encryptedPassword = encryptPassword(newPassword);
-//             user.setPassword(encryptedPassword);
-//             regRepo.save(user);
-//             RegisterDto updatedRegisterDto = convertToDto(user);
-//             return updatedRegisterDto;
-// }
-
     public RegisterDto updatePassword(String email, String newPassword) {
     Student user = regRepo.findByEmail(email);
     if (user == null) {

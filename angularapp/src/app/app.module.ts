@@ -26,6 +26,8 @@ import { ContactComponent } from './contact/contact.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 
 import { MatIconModule } from "@angular/material/icon";
+import { AdmissionListComponent } from './admission-list/admission-list.component';
+import { AdmissionDetailsComponent } from './admission-details/admission-details.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { MatIconModule } from "@angular/material/icon";
     ProfileComponent,
     ContactComponent,
     StudentDetailsComponent,
+    AdmissionListComponent,
+    AdmissionDetailsComponent,
 
   ],
   imports: [
