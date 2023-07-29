@@ -76,6 +76,27 @@ public ResponseEntity<?> login(@RequestBody Map<String, Object> loginForm) {
     // User authentication failed
     return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
 }
+    @GetMapping("/validate-token")
+    public ResponseEntity<String> validateToken(@RequestHeader("Authorization") String tokenHeader) {
+    
+    String token = extractTokenFromHeader(tokenHeader);
+
+    if (token != null && jwtAuthenticationFilter.validateToken(token)) {
+      
+        return ResponseEntity.ok("Token is valid");
+    } else {
+        
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid or expired token");
+    }
+}
+
+    private String extractTokenFromHeader(String tokenHeader) {
+    if (tokenHeader != null && tokenHeader.startsWith("Bearer ")) {
+        return tokenHeader.substring(7); 
+    }
+    return null;
+}
+
 
 
     private boolean validateCredentials(String email, String password) {

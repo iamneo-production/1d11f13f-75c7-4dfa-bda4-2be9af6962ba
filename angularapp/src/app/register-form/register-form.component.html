@@ -118,7 +118,7 @@
               Password must contain at least one symbol
             </div>
           </div>
-        <!-- </div>   
+        </div>   
         <div class="form-group">
           <label for="confirmPassword">Confirm Password</label>
           <input
@@ -144,13 +144,12 @@
               Confirm Password does not match
             </div>
           </div>
-        </div> -->
+        </div>
         <div class="text-center mt-4">
           <a routerLink="/login">Already have an account? Login</a>
         </div>
         <div class="form-group text-center ">
           <button type="submit" class="btn btn-primary">Register</button>
-        </div>
         </div>
       </form>
       <div *ngIf="successMessage" class="success-message"style="text-align: center;">{{ successMessage }}</div>
