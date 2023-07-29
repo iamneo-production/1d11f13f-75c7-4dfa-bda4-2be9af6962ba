@@ -1,8 +1,9 @@
 <app-navbar></app-navbar>
-<div class="container"><h1 class="text-center">List of students</h1>
+<div style="background-color: #234E70; color: white;">
+<div class="container"><h1 class="text-center" color="white;">List of students</h1>
     <br>
-    <a routerLink="/add-student" class="btn btn-primary" style="background-color:white; color:black;">Add Student</a>
-    <input class="form-control float-right" type="search" placeholder="Search" aria-label="Search" style="width:30%;"
+    <a routerLink="/add-student" class="btn btn-info" >Add Student</a>
+    <input class="form-control float-right" type="search" placeholder="Type here to search student" aria-label="Search" style="width:30%;"
     [(ngModel)]="searchText" [ngModelOptions]="{ standalone: true }" (input)="onSearch()">
 <br>
 <br>
@@ -38,4 +39,5 @@
         </tr>
     </tbody>
 </table>
+</div>
 </div>

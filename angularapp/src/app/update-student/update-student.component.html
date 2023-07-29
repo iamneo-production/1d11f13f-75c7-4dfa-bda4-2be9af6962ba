@@ -1,6 +1,9 @@
 <app-navbar></app-navbar>
+<div style="background-color: #234E70; color: white;">
 <div class="col-md-6 offset-md-3 custom-form">
+    <div style="text-align: center;">
     <h3>Update Student</h3>
+    </div>
     <form (ngSubmit)="onSubmit()" #studentForm="ngForm">
 
         <div class="form-group">
@@ -54,8 +57,9 @@
             </div>
         </div>
 
-        <button class="btn btn-success" type="submit" [disabled]="studentForm.invalid">Submit</button>
+        <button class="btn btn-success" type="submit" [disabled]="studentForm.invalid">Update </button>
 
 
     </form>
+</div>
 </div>

@@ -36,23 +36,35 @@ export class StudentListComponent {
     })
   }
   
-  get filteredCourses(): Student[] {
-    return this.students.filter(students => students.firstName.toLowerCase().includes(this.searchText.toLowerCase()));
+  getfilteredStudents(): Student[] {
+    return this.students.filter(student => {
+      const searchTextLower = this.searchText.toLowerCase();
+      return (
+        student.firstName.toLowerCase().includes(searchTextLower) ||
+        student.lastName.toLowerCase().includes(searchTextLower) ||
+        student.email.toLowerCase().includes(searchTextLower) ||
+        student.password.toLowerCase().includes(searchTextLower) ||
+        student.address.toLowerCase().includes(searchTextLower) ||
+        student.phoneNumber.toLowerCase().includes(searchTextLower) ||
+        student.id.toString().includes(searchTextLower)
+      );
+    });
+  }
+  
+  
+  onSearch() {
+    if (this.searchText.trim() !== '') {
+      this.students = this.getfilteredStudents();
+    } else {
+      this.getAllStudents();
     }
-    onSearch() {
-      if (this.searchText.trim() !== '') {
-        this.students = this.students.filter((ac) =>
-          ac.firstName.toLowerCase().includes(this.searchText.toLowerCase())
-        );
-      } else {
-        this.getAllCourse(); // Reset the course list to show all courses when search input is empty.
-      }
-    }
-    private getAllCourse(){
-      this.studentService.getstudentslist().subscribe(data=> {
-        this.students = data;
-      })
-    }
-
+  }
+  
+  private getAllStudents() {
+    this.studentService.getstudentslist().subscribe(data => {
+      this.students = data;
+    });
+  }
+  
 
 }

@@ -23,6 +23,7 @@ import { UpdateStudentComponent } from './update-student/update-student.componen
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
 
 @NgModule({
   declarations: [
@@ -40,14 +41,11 @@ import { ContactComponent } from './contact/contact.component';
     CourseviewComponent,
     StudentListComponent,
     AddStudentComponent,
-<<<<<<< HEAD
-    UpdateStudentComponent
-=======
     UpdateStudentComponent,
     LoginComponent,
     ProfileComponent,
     ContactComponent,
->>>>>>> 13835e087cecd97399b7b9b85bf39b0d579a480d
+    StudentDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StudentDetailsComponent {
   id: number = 0;
-  student: Student | undefined;
+  
 
   constructor(private route: ActivatedRoute, private studentService: StudentService) {}
 
