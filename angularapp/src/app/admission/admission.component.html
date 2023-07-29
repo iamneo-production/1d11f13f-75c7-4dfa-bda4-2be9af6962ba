@@ -5,7 +5,7 @@
 
       <div class="form-group">
         <label for="documents">Required Documents*</label>
-        <input type="file" class="form-control" id="documents" formControlName="documents"
+        <input type="file" class="form-control"  id="documents" formControlName="documents"
           [ngClass]="{
             'is-invalid': documents?.invalid && documents?.touched,
             'is-valid': documents?.valid && documents?.touched
@@ -13,7 +13,7 @@
           accept=".pdf"
         >
         <div *ngIf="documents?.invalid && documents?.touched" class="invalid-feedback">
-          This field is require
+          This field is require(Select 10th/12th Certificate)
         </div>
       </div>
 

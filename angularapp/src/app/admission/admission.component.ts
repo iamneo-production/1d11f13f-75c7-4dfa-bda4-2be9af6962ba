@@ -35,9 +35,9 @@ export class AdmissionComponent implements OnInit {
     this.fetchCourses();
   }
 
-  checkApplicationStatus() {
-    alert('Status: Submit Your Form First');
-  }
+  // checkApplicationStatus() {
+  //   alert('Status: Submit Your Form First');
+  // }
 
   fetchCourses() {
     this.admissionService.fetchCourses().subscribe(
