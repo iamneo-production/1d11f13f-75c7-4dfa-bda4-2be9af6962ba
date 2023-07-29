@@ -7,4 +7,3 @@ import com.example.springapp.model.Student;
 public interface StudentRepo extends JpaRepository<Student, Integer> {
 
 }
-

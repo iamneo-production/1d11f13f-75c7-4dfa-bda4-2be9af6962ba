@@ -9,7 +9,7 @@
 <div class="container">
     <div class="register-form">
       <h3 class="text-center">Register form</h3>
-      <form formGroup="registerForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="firstName">First Name</label>
           <input
@@ -17,7 +17,7 @@
             id="firstName"
             formControlName="firstName"
             class="form-control smaller-placeholder"
-            ngClass="{ 'is-invalid': submitted && f['firstName'].errors }"
+            [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }"
             placeholder="Enter your First name"
           />
           <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
@@ -31,7 +31,7 @@
             id="lastName"
             formControlName="lastName"
             class="form-control"
-            ngClass="{ 'is-invalid': submitted && f['lastName'].errors }"
+            [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }"
             placeholder="Enter your Last name "
           />
           <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
@@ -45,7 +45,7 @@
             id="email"
             formControlName="email"
             class="form-control"
-            ngClass="{ 'is-invalid': submitted && f['email'].errors }"
+            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
             placeholder="Enter your email"
           />
           <div *ngIf=" submitted &&f['email'].errors" class="invalid-feedback">
@@ -65,7 +65,7 @@
             id="address"
             formControlName="address"
             class="form-control"
-            ngClass="{ 'is-invalid': submitted && f['address'].errors }"
+            [ngClass]="{ 'is-invalid': submitted && f['address'].errors }"
             placeholder="Enter your address"
           />
           <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">
@@ -79,7 +79,7 @@
             id="phoneNumber"
             formControlName="phoneNumber"
             class="form-control"
-            ngClass="{ 'is-invalid': submitted && f['phoneNumber'].errors }"
+            [ngClass]="{ 'is-invalid': submitted && f['phoneNumber'].errors }"
             placeholder="Enter your phoneNumber number"
           />
           <div *ngIf="submitted && f['phoneNumber'].errors" class="invalid-feedback">
@@ -95,13 +95,13 @@
               id="password"
               formControlName="password"
               class="form-control"
-              ngClass="{ 'is-invalid': submitted && f['password'].errors }"
+              [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
               placeholder="Enter your password"
             />
             <div class="input-group shorter-input-group ">
             <div class="input-group-append">
               <span class="input-group-text password-toggle" (click)="togglePasswordVisibility('password')">
-                <em class="fa" ngClass="{ 'fa-eye': passwordVisible, 'fa-eye-slash': !passwordVisible }"></em>
+                <i class="fa" [ngClass]="{ 'fa-eye': passwordVisible, 'fa-eye-slash': !passwordVisible }"></i>
               </span>
               </div>
             </div>
@@ -118,7 +118,7 @@
               Password must contain at least one symbol
             </div>
           </div>
-        </div>   
+        <!-- </div>   
         <div class="form-group">
           <label for="confirmPassword">Confirm Password</label>
           <input
@@ -126,13 +126,13 @@
             id="confirmPassword"
             formControlName="confirmPassword"
             class="form-control"
-            ngClass="{ 'is-invalid': submitted && f['confirmPassword'].errors }"
+            [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }"
             placeholder="Confirm Password"
           />
           <div class="input-group shorter-input-group ">
             <div class="input-group-append">
               <span class="input-group-text password-toggle" (click)="togglePasswordVisibility('confirmPassword')">
-                <em class="fa" ngClass="{ 'fa-eye':confirmPasswordVisible, 'fa-eye-slash': !confirmPasswordVisible }"></em>
+                <i class="fa" [ngClass]="{ 'fa-eye':confirmPasswordVisible, 'fa-eye-slash': !confirmPasswordVisible }"></i>
               </span>
               </div>
             </div>
@@ -144,12 +144,13 @@
               Confirm Password does not match
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="text-center mt-4">
           <a routerLink="/login">Already have an account? Login</a>
         </div>
         <div class="form-group text-center ">
           <button type="submit" class="btn btn-primary">Register</button>
         </div>
+        </div>
       </form>
-      <div *ngIf="successMessage" class="success-message"style="text-align: center;">{{ successMessage }}</div>
+      <div *ngIf="successMessage" class="success-message"style="text-align: center;">{{ successMessage }}</div>

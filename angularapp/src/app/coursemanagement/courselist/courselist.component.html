@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <form class="form-inline mt-4 forms">
+      <div>
+      <a routerLink="/addcourse" class="btn btn-primary" style="background-color:white; color:black;">Add Course</a>
+    </div>
+ 
+      <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="width:30%;"
+             [(ngModel)]="searchText" [ngModelOptions]="{ standalone: true }" (input)="onSearch()">
+ 
+    </form>
+  
+    <hr>
+    <br>
+    <br>
+  
+    <div class="row forms">
+      <div class="col-3 mb-3" *ngFor="let ac of filteredCourses">
+        <div class="card" style="width: 15rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ac.name}}</h5>
+            <p class="card-text">Description: {{ac.description}}</p>
+            <p class="card-text">Prerequisites: {{ac.prerequisites}}</p>
+            <p class="card-text">Credits: {{ac.credits}}</p>
+            <a class="btn btn-primary m-2" (click)="viewCourse(ac.id)" style="background-color:rgb(20, 21, 62);color:white;">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

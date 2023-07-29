@@ -1,0 +1,92 @@
+<app-header></app-header>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   <!-- Include jQuery -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <!-- Include Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <!-- Include Bootstrap JavaScript -->
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <div class="container">
+    <div class="profile">
+      <h3><i class="fa fa-cogs settings-icon"></i>PROFILE SETTINGS</h3>
+      <br>
+    <form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+      <div class="form-group row align-items-center">
+        <label for="firstName" class=" col-form-label"> <i class="fas fa-user fa-lg mr-2"></i>FIRST NAME :</label>
+        <div >
+          <input
+          type="text"
+          formControlName="firstName"
+          class="form-control line-input"
+          [readonly]="!editMode"
+        >
+      </div>
+      </div>
+      <div class="form-group row align-items-center" >
+        <label for="lastName" class=" col-form-label"><i class="fas fa-user fa-lg mr-2"></i>LAST NAME:</label>
+        <div >  
+        <input
+          type="text"
+          formControlName="lastName"
+          class="form-control line-input"
+          [readonly]="!editMode"
+        /> 
+      </div>
+      </div>
+      <div class="form-group row align-items-center">
+        <label for="email" class=" col-form-label"> <i class="fas fa-envelope fa-lg mr-2"></i>EMAIL:</label>
+        <div > 
+        <input
+          type="email"
+          formControlName="email"
+          class="form-control line-input"
+          [readonly]="!editMode"
+          [ngClass]="{ 'is-invalid': f['email'].errors && f['email'].touched &&f['email'].value }"
+        />
+        <div *ngIf="f['email'].errors && f['email'].touched" class="invalid-feedback">
+          <div *ngIf="f['email'].errors?.['email']">Email is invalid</div>
+          <div *ngIf="f['email'].errors?.['lowercaseEmail']"></div>
+          <div *ngIf="emailExists">Email already exists</div>
+        </div>
+      </div>
+      </div>
+      <div class="form-group row align-items-center">
+        <label for="address"  class=" col-form-label"> <i class="fas fa-home fa-lg mr-2"></i>ADDRESS:</label>
+        <div> 
+        <input
+          type="text"
+          formControlName="address"
+          class="form-control line-input"
+          [readonly]="!editMode"
+        />
+      </div> 
+      </div>
+      <div class="form-group row align-items-center">
+        <label for="phoneNumber" class="col-form-label "> <i class="fas fa-phone fa-lg mr-2"></i>PHONE NUMBER:</label> 
+        <div >
+        <input
+          type="text"
+          formControlName="phoneNumber"
+          class="form-control line-input"  
+          [readonly]="!editMode"
+          [ngClass]="{ 'is-invalid': f['phoneNumber'].errors && f['phoneNumber'].touched  &&f['email'].value}"
+        />
+        <div *ngIf="f['phoneNumber'].errors && f['phoneNumber'].touched" class="invalid-feedback">
+          <div *ngIf="f['phoneNumber'].errors?.['pattern']">Invalid contact number format</div>
+          <div *ngIf="phoneNumberExists">Contact number already exists</div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="d-grid gap-2 d-md-block  col-9 mx-auto ">
+    <button type="submit" class="btn btn-dark me-md-2"  [disabled]="!editMode">UPDATE</button>
+    <button type="button" class="btn btn-dark" (click)="toggleEditMode()">
+      {{ editMode ? 'CANCEL' : 'EDIT' }}
+    </button>
+    </div>
+    </form>
+    </div>
+    <div *ngIf="successMessage" class="success-message" style="text-align: center;">{{ successMessage }}</div>
+

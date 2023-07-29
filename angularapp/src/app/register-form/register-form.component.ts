@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { RegisterFormService } from '../register-form.service';
+import { RegisterFormService } from '../service/register-form.service';
 
 @Component({
   selector: 'app-register-form',
@@ -49,9 +49,10 @@ export class RegisterFormComponent {
           RegisterFormService.passwordValidator()
         ]
       ],
-      confirmPassword: ['', Validators.required]
-    }, {
-      validator: this.MustMatch('password', 'confirmPassword')
+      // confirmPassword: ['', Validators.required]
+    }, 
+    {
+      // validator: this.MustMatch('password', 'confirmPassword')
     });
   }
 
@@ -135,7 +136,7 @@ export class RegisterFormComponent {
         (error) => {
           console.error('Error checking email existence:', error);
         }
-      );
-    }
+    );
+   }
   }
 }
