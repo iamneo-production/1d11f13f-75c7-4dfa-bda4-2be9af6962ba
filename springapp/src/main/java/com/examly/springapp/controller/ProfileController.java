@@ -17,7 +17,7 @@ import com.examly.springapp.model.Profile;
 import com.examly.springapp.service.ProfileService;
 
 
-@CrossOrigin(origins = "https://8081-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io")
+@CrossOrigin(origins = "https://8081-bdfdeabfecfbcefbeacfaceadbffaabaebdcec.project.examly.io")
 @RestController
 @RequestMapping("/home")
 public class ProfileController {

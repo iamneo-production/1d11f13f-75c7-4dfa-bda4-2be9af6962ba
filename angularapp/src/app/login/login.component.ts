@@ -141,6 +141,7 @@ this.loginService.login(email, password).pipe(
 ).subscribe({
   next: (response: any) => {
     // Do nothing, since we handle the response in the tap() operator
+    
   },
   error: (error: any) => {
     // Login failed

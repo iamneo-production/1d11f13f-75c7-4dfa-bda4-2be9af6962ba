@@ -16,7 +16,7 @@ import com.examly.springapp.service.RegisterService;
 
 @RestController
 @RequestMapping("/home")
-@CrossOrigin(origins = "https://8081-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io")
+@CrossOrigin(origins = "https://8081-bdfdeabfecfbcefbeacfaceadbffaabaebdcec.project.examly.io")
 public class RegisterController {
 
     @Autowired

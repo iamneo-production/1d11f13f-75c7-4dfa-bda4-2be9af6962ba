@@ -29,7 +29,7 @@ import com.examly.springapp.service.CourseService;
 
 @RestController
 @RequestMapping("/courses")
-@CrossOrigin(origins = "https://8081-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io")
+@CrossOrigin(origins = "https://8081-bdfdeabfecfbcefbeacfaceadbffaabaebdcec.project.examly.io")
 public class CourseController {
 
     @Autowired
