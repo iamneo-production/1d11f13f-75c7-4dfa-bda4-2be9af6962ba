@@ -1,12 +1,14 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Profile.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/AuthController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/UserDetailsServiceImpl.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/UserService.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/AuthController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/SpringappApplication.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/authentication/JwtAuthenticationFilter.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/RegisterController.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Enrollment.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/ProfileRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/CourseRepo.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/EnrollmentController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/ProfileService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/StudentController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/CourseService.java
@@ -20,6 +22,8 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/ProfileController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/ContactRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Course.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/EnrollmentService.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/EnrollmentRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/UserRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Contact.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/RegisterService.java
