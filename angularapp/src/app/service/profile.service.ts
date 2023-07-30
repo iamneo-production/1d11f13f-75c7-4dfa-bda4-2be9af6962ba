@@ -11,7 +11,7 @@ import { LoginService } from './login.service';
   providedIn: 'root'
 })
 export class ProfileService {
-  private baseUrl = 'https://8080-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io/home'; // Update with your API endpoint URL
+  private baseUrl = 'https://8080-dedafedcfdcefbeacfaceadeaeaadbdbabf.project.examly.io/home'; // Update with your API endpoint URL
   //private headers: HttpHeaders;
 
   // constructor(private http: HttpClient) {

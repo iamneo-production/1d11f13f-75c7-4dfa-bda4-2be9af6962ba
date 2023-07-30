@@ -7,7 +7,7 @@ import { Course }from '../class/course'
   providedIn: 'root'
 })
 export class CourseService {
-  private apiUrl: string= 'https://8080-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io/courses';
+  private apiUrl: string= 'https://8080-dedafedcfdcefbeacfaceadeaeaadbdbabf.project.examly.io/courses';
 
   constructor(private http: HttpClient) { 
 

@@ -36,7 +36,7 @@ export class AdmissionListComponent implements OnInit{
 
 
   reject(id: number): void {
-    const url = `https://8080-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io/acceptRejectApplication/${id}`;
+    const url = `https://8080-dedafedcfdcefbeacfaceadeaeaadbdbabf.project.examly.io/acceptRejectApplication/${id}`;
     const statusUpdate = { status: 'rejected' };
   
     const httpOptions = {
@@ -63,7 +63,7 @@ export class AdmissionListComponent implements OnInit{
 }
 
 accept(id: number): void {
-  const url = `https://8080-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io/acceptRejectApplication/${id}`;
+  const url = `https://8080-dedafedcfdcefbeacfaceadeaeaadbdbabf.project.examly.io/acceptRejectApplication/${id}`;
   const statusUpdate = { status: 'accepted' };
 
   const httpOptions = {
