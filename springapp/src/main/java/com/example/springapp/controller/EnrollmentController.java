@@ -32,7 +32,7 @@ public class EnrollmentController {
         this.enrollmentService = enrollmentService;
     }
 
-    @CrossOrigin(origins = "https://8081-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io")
+    @CrossOrigin(origins = "https://8081-ecafcddffdddcefbeacfaceadeaeaadbdbabf.project.examly.io")
     @GetMapping("/enrollments")
     public ResponseEntity<List<Enrollment>> getAllEnrollments() {
         List<Enrollment> enrollments = enrollmentService.getAllEnrollment();

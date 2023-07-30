@@ -1,30 +1,20 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Profile.java
-<<<<<<< HEAD
-=======
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/AuthController.java
->>>>>>> 9a658837913efdc4c946b4c505443577936b735b
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/UserDetailsServiceImpl.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/UserService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/AuthController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/SpringappApplication.java
-<<<<<<< HEAD
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/RegisterController.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Enrollment.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/authentication/JwtAuthenticationFilter.java
-=======
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/authentication/JwtAuthenticationFilter.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/RegisterController.java
->>>>>>> 9a658837913efdc4c946b4c505443577936b735b
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/ProfileRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/CourseRepo.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/EnrollmentController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/ProfileService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/StudentController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/CourseService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/AdmissionController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/StudentService.java
-<<<<<<< HEAD
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/dto/RegisterDto.java
-=======
->>>>>>> 9a658837913efdc4c946b4c505443577936b735b
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/AdmissionRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/ContactController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/RegisterRepo.java
@@ -32,14 +22,12 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/ProfileController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/ContactRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Course.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/EnrollmentService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/UserRepo.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/EnrollmentRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Contact.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/RegisterService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/Security/SecurityConfig.java
-<<<<<<< HEAD
-=======
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/StudentRepo.java
->>>>>>> 9a658837913efdc4c946b4c505443577936b735b
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/AdmissionService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/StudentRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Admission.java

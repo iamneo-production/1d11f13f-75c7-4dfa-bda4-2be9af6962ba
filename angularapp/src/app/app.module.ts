@@ -24,13 +24,10 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
-<<<<<<< HEAD
-=======
 
 import { MatIconModule } from "@angular/material/icon";
 import { AdmissionListComponent } from './admission-list/admission-list.component';
 import { AdmissionDetailsComponent } from './admission-details/admission-details.component';
->>>>>>> 9a658837913efdc4c946b4c505443577936b735b
 
 @NgModule({
   declarations: [
@@ -53,12 +50,9 @@ import { AdmissionDetailsComponent } from './admission-details/admission-details
     ProfileComponent,
     ContactComponent,
     StudentDetailsComponent,
-<<<<<<< HEAD
-=======
     AdmissionListComponent,
     AdmissionDetailsComponent,
 
->>>>>>> 9a658837913efdc4c946b4c505443577936b735b
   ],
   imports: [
     BrowserModule,
