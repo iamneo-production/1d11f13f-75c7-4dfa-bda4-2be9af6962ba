@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center; /*center vertically */
+    align-items: center; /* center horizontally */
+    background: linear-gradient(135deg, var(#71b7e6), var(#9b59b6));
+    padding: 10px;
+  }
+  /* container and form */
+  .container {
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    border: 1px solid #55aaff;
+    margin: 0 auto;
+    background-color: #e6fff6;
+    margin-top: 35px;
+  }
+  .container .title {
+    font-size: 36px;
+    color: #000000;
+    font-weight: 500;
+    position: relative;
+    text-align: center;
+  }
+  
+  .container .title::before {
+    content: "";
+    position: absolute;
+    height: 3.5px;
+    width: 30px;
+    background: linear-gradient(135deg, var(#71b7e6), var(#9b59b6));
+    left: 0;
+    bottom: 0;
+  }
+  
+  .container form .user__details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+  }
+  /* inside the form user details */
+  form .user_details .input_box {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .user_details .input_box .details {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: inline-block;
+    width: 30%;
+  }
+  .user_details .input_box input {
+    height: 45px;
+    width: 70%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(#ccc);
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  .user_details .input_box select {
+    height: 45px;
+    width: 70%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(#ccc);
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  .user_details .input_box input:focus,
+  .user_details .input_box input:valid {
+    border-color: var(#9b59b6);
+  }
+  
+  /* inside the form gender details */
+  
+  form .gender_details .gender_title {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  form .gender__details .category {
+    display: flex;
+    width: 80%;
+    margin: 15px 0;
+    justify-content: space-between;
+  }
+  
+  .gender__details .category label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .gender__details .category .dot {
+    height: 18px;
+    width: 18px;
+    background: var(#d9d9d9);
+    border-radius: 50%;
+    margin: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  #dot-1:checked ~ .category .one,
+  #dot-2:checked ~ .category .two,
+  #dot-3:checked ~ .category .three {
+    border-color: var(#d9d9d9);
+    background: var(#9b59b6);
+  }
+  
+  form input[type="radio"] {
+    display: none;
+  }
+  
+  /* submit button */
+  form .button {
+    height: 45px;
+    margin: 45px 0;
+  }
+  
+  form .button input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    background: linear-gradient(135deg, var(#71b7e6), var(#9b59b6));
+    transition: all 0.3s ease;
+  }
+  
+  form .button input:hover {
+    background: linear-gradient(-135deg, var(#71b7e6), var(#9b59b6));
+  }
+  
+  @media only screen and (max-width: 584px) {
+    .container {
+      max-width: 100%;
+    }
+  
+    form .user_details .input_box {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+  
+    form .gender__details .category {
+      width: 100%;
+    }
+  
+    .container form .user__details {
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+  
+    .user__details::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+  
+  .phone_ext {
+    width: 11% !important;
+    display: inline-block;
+  }
+  
+  .phone_num {
+    width: 56% !important;
+    margin-left: 17px;
+  }
+  
+  .add_button {
+    text-decoration: none;
+      background: blue;
+      padding: 9px 11px;
+      color: #fff;
+  }
+  
+  .button {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .button button{
+    display: inline-block;
+    background-color: blue;
+    width: 25% !important;
+    margin: 0 auto;
+    color: #fff;
+    border-radius: 12px;
+  }
+  
+  .gender__details {
+    width: 100%;
+    display: block;
+  }
+  
+  .submit_button {
+    float: right;
+    background: #007bff;
+    padding: 10px 12px;
+    color: #fff;
+    border-color: #007bff;
+    border-radius: 12px;
+  }
