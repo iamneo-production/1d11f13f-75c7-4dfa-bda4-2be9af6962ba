@@ -9,12 +9,12 @@ export class RegisterFormService {
   constructor(private http: HttpClient) {}
 
   saveFormData(formData: any) {
-    return this.http.post<any>('https://8080-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io/home/register', formData);
+    return this.http.post<any>('https://8080-ebeafcefbeacfaceadeaeaadbdbabf.project.examly.io/home/register', formData);
   }
  
   checkEmailExists(email: string): Observable<boolean> {
     return this.http
-      .get<boolean>(`https://8080-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io/home/check-email/${email}`)
+      .get<boolean>(`https://8080-ebeafcefbeacfaceadeaeaadbdbabf.project.examly.io/home/check-email/${email}`)
       .pipe(
         catchError(() => {
           // Handle error if needed
@@ -25,7 +25,7 @@ export class RegisterFormService {
 
   checkphoneNumberExists(phoneNumber: string): Observable<boolean> {
     return this.http
-      .get<boolean>(`https://8080-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io/home/check-phoneNumber/${phoneNumber}`)
+      .get<boolean>(`https://8080-ebeafcefbeacfaceadeaeaadbdbabf.project.examly.io/home/check-phoneNumber/${phoneNumber}`)
       .pipe(
         catchError(() => {
           // Handle error if needed

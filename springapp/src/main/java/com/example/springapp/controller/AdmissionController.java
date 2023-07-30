@@ -21,7 +21,7 @@ import com.example.springapp.model.Admission;
 import com.example.springapp.service.AdmissionService;
 
 @RestController
-@CrossOrigin("https://8081-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io")
+@CrossOrigin("https://8081-ebeafcefbeacfaceadeaeaadbdbabf.project.examly.io")
 public class AdmissionController {
     
     @Autowired

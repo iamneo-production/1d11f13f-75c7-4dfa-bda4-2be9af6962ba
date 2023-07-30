@@ -17,7 +17,7 @@ import com.example.springapp.model.Student;
 import com.example.springapp.service.UserService;
 
 @RestController
-@CrossOrigin(origins = "https://8081-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io")
+@CrossOrigin(origins = "https://8081-ebeafcefbeacfaceadeaeaadbdbabf.project.examly.io")
 @RequestMapping("/api/auth")
 public class AuthController {
 
