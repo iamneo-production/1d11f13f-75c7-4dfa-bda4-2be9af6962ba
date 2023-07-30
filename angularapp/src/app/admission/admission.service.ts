@@ -22,7 +22,7 @@ export class AdmissionService {
   }
 
   submitAdmissionForm(formData: FormData) {
-    return this.http.post(`${this.apiUrl}/admission`, formData);
+    return this.http.post(`${this.apiUrl}/admissions`, formData);
   }
   getAllAdmissions(): Observable<Admission[]>{
     return this.http.get<Admission[]>(`${this.apiUrl}/getall`);
