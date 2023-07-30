@@ -31,7 +31,7 @@ public class AdmissionController {
         this.admissionService = admissionService;
     }
 
-    @PostMapping("/admission")
+    @PostMapping("/admissions")
     public ResponseEntity<Admission> saveStudent(@RequestParam("pdfFile") MultipartFile pdfFile, Admission student) {
         try {
             byte[] fileData;
