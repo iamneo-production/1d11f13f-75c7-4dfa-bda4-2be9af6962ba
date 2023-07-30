@@ -15,9 +15,6 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.examly.springapp.authentication.JwtAuthenticationFilter;
 
@@ -35,17 +32,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-        .cors()
-        .and()
-        .authorizeHttpRequests().antMatchers("/**").permitAll();
-        //.authorizeRequests(authorize -> authorize
-           // .antMatchers(HttpMethod.POST, "/api/auth/login","/home/**")
-           //.permitAll()
-                // .antMatchers("/**").permitAll()
-             //   .antMatchers("/admin/**").hasRole("ADMIN")
-                //.anyRequest().authenticated()
-            //)
-           // .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+            .authorizeRequests(authorize -> authorize
+            .antMatchers(HttpMethod.POST, "/api/auth/login","/home/**").permitAll()
+                .antMatchers("/**").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
@@ -65,17 +58,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
-
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.addAllowedOrigin("https://8081-ecafcddffdddcefbeacfaceadbffaabaebdcec.project.examly.io"); // Add your Angular application's origin here
-        configuration.addAllowedMethod("*");
-        configuration.addAllowedHeader("*");
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    
-}
 }

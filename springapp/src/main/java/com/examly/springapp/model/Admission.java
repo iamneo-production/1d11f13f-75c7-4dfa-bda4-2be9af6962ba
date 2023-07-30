@@ -14,7 +14,6 @@ import javax.persistence.Table;
 public class Admission {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @OneToOne
