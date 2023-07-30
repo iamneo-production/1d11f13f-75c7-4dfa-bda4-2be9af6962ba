@@ -31,7 +31,7 @@ public class AdmissionController {
         this.admissionService = admissionService;
     }
 
-    @PostMapping("/admission")
+    @PostMapping("/admissions")
     public ResponseEntity<Admission> saveStudent(@RequestParam("pdfFile") MultipartFile pdfFile, Admission student) {
         try {
             byte[] fileData;
@@ -60,13 +60,13 @@ public class AdmissionController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error updating application status.");
         }
     }
-    @GetMapping("/getall")
+    @GetMapping("admissions/getall")
     public ResponseEntity<List<Admission>> getAllStudents() {
         List<Admission> students = admissionService.findAll();
         return ResponseEntity.ok(students);
     }
     
-    @GetMapping("/get/{id}")
+    @GetMapping("admissions/get/{id}")
     public ResponseEntity<Admission> getStudentById(@PathVariable int id) {
         Optional<Admission> student = admissionService.findById(id);
         if (student.isPresent()) {
