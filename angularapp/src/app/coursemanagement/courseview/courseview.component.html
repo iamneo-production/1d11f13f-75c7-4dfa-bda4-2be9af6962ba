@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h5 class="text-center">COURSE DETAILS</h5>
+  <div class="d-flex justify-content-center align-items-center height: 100vh mt-5">
+  <div class="card" style="width: 28rem;">
+
+    <div class="card-body">
+      <p>Course Name : {{course.name}}</p>
+      <p>Course Description : {{course.description}}</p>
+      <p>Course Prerequisites: {{course.prerequisites}}</p>
+      <a class="btn btn-primary m-2" (click)="updateCourse(course.id)" style="background-color:rgb(20, 21, 62);color:white;" >Update</a> 
+      <a class="btn btn-primary m-2" (click)="deleteCourse(course.id)"  style="background-color:rgb(20, 21, 62);color:white;" >Delete</a>
+    </div>
+  </div>
+  </div>
+  </div>

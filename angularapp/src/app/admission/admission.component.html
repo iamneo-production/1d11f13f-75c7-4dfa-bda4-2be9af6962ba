@@ -1,0 +1,44 @@
+<app-header></app-header>
+<!-- admission.component.html -->
+<div class="container admission-form-container">
+  <!-- <h1 class="text-center mb-5">Student Admission Form</h1> -->
+  <form [formGroup]="admissionForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate enctype="multipart/form-data">
+    <div class="row d-flex align-items-stretch">
+      <div class="form-group">
+        <label for="documents">Required Documents*</label>
+        <input type="file" class="form-control" id="documents" formControlName="documents"
+          [ngClass]="{
+            'is-invalid': documents?.invalid && documents?.touched,
+            'is-valid': documents?.valid && documents?.touched
+          }"
+          accept=".pdf"
+        >
+        <div *ngIf="documents?.invalid && documents?.touched" class="invalid-feedback">
+          This field is require
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="course">Course Name*</label>
+        <select class="form-control" id="course" formControlName="course"
+          [ngClass]="{ 'is-invalid': course?.invalid && course?.touched, 'is-valid': course?.valid && course?.touched }"
+          autocomplete="off">
+          <option value="" disabled selected>Select a course</option>
+          <option *ngFor="let courseOption of courses" [value]="courseOption">{{ courseOption }}</option>
+        </select>
+        <div *ngIf="course?.invalid && course?.touched" class="invalid-feedback">
+          This field is required
+        </div>
+      </div>
+      
+    </div>
+    <div class="form-group text-center mt-5">
+      <button [disabled]="admissionForm.invalid" type="submit" class="btn btn-primary rounded-pill btn-lg custom-btn">Submit</button>
+    </div>
+  </form>
+</div>
+
+<!-- <div class="application-status-btn-container">
+  <button type="button" class="btn btn-secondary rounded-pill btn-lg custom-btn" (click)="checkApplicationStatus()" >Application Status</button>
+</div> -->
+
