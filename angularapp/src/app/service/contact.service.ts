@@ -9,6 +9,6 @@ export class ContactService {
   constructor(private http: HttpClient) {}
 
   postContactform(formData: any) {
-    return this.http.post("https://8080-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io/api/students", formData);
+    return this.http.post("https://8080-dedafedcfdcefbeacfaceadbffaabaebdcec.project.examly.io/api/students", formData);
 }
 }

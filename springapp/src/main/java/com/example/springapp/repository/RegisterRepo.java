@@ -1,14 +1,14 @@
-package com.example.springapp.repository;
+// package com.example.springapp.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+// import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.springapp.model.Student;
+// import com.example.springapp.model.Student;
 
-public interface RegisterRepo extends JpaRepository<Student, Integer>{
+// public interface RegisterRepo extends JpaRepository<Student, Integer>{
 
-    Student findByEmail(String email);
+//     Student findByEmail(String email);
 
-    boolean existsByEmail(String email);
+//     boolean existsByEmail(String email);
 
-    boolean existsByphoneNumber(String phoneNumber);
-}
+//     boolean existsByphoneNumber(String phoneNumber);
+// }
