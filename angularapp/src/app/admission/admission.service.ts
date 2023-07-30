@@ -8,7 +8,7 @@ import { Admission } from '../class/admission';
   providedIn: 'root'
 })
 export class AdmissionService {
-  private apiUrl = 'https://8080-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io';
+  private apiUrl = 'https://8080-dedafedcfdcefbeacfaceadeaeaadbdbabf.project.examly.io';
 
   constructor(private http: HttpClient) {}
 
