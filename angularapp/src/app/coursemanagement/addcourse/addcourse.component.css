@@ -1,0 +1,24 @@
+.form-group{
+    margin-bottom: 3px;
+    padding:6px;
+}
+.container{
+    background-color: rgb(20, 21, 62);
+}
+.body{
+    text-align: center;
+}
+form{
+    width:60%;
+   border-radius: 2px;
+   padding:25px;
+   display: inline-block;
+}
+h4{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:white;
+}
+.alerts{
+    float:right;
+    color:red;
+}
