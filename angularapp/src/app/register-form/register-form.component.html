@@ -1,0 +1,155 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   <!-- Include jQuery -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <!-- Include Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <!-- Include Bootstrap JavaScript -->
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+<div class="container">
+    <div class="register-form">
+      <h3 class="text-center">Register form</h3>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            id="firstName"
+            formControlName="firstName"
+            class="form-control smaller-placeholder"
+            [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }"
+            placeholder="Enter your First name"
+          />
+          <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+            <div *ngIf="f['firstName'].errors?.['required']">Firstname is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            formControlName="lastName"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }"
+            placeholder="Enter your Last name "
+          />
+          <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+            <div *ngIf="f['lastName'].errors?.['required']">Last name is required</div> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+            placeholder="Enter your email"
+          />
+          <div *ngIf=" submitted &&f['email'].errors" class="invalid-feedback">
+            <div *ngIf="f['email'].errors?.['required']">Email is required</div>
+            <div *ngIf="f['email'].errors?.['email']">Email is invalid</div>
+            <div *ngIf="f['email'].errors?.['lowercaseEmail']"></div>
+            <div *ngIf="emailExists">Email already exists </div>
+            <div *ngIf="f['email'].errors?.['invalidDomain']">
+              Invalid email domain. Only Gmail addresses are allowed.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input
+            type="text"
+            id="address"
+            formControlName="address"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['address'].errors }"
+            placeholder="Enter your address"
+          />
+          <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">
+            <div *ngIf="f['address'].errors?.['required']">Address is required</div>
+          </div>
+        </div>        
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input
+            type="text"
+            id="phoneNumber"
+            formControlName="phoneNumber"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['phoneNumber'].errors }"
+            placeholder="Enter your phoneNumber number"
+          />
+          <div *ngIf="submitted && f['phoneNumber'].errors" class="invalid-feedback">
+            <div *ngIf="f['phoneNumber'].errors?.['required']">phoneNumber  is required</div>
+            <div *ngIf="f['phoneNumber'].errors?.['pattern']">Invalid contact number format</div>
+            <div *ngIf="phoneNumberExists">Contact number already exists</div>
+          </div>
+        </div> 
+        <div class="form-group">
+          <label for="password">Password</label>
+            <input
+              type="{{ passwordVisible ? 'text' : 'password' }}"
+              id="password"
+              formControlName="password"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+              placeholder="Enter your password"
+            />
+            <div class="input-group shorter-input-group ">
+            <div class="input-group-append">
+              <span class="input-group-text password-toggle" (click)="togglePasswordVisibility('password')">
+                <i class="fa" [ngClass]="{ 'fa-eye': passwordVisible, 'fa-eye-slash': !passwordVisible }"></i>
+              </span>
+              </div>
+            </div>
+          <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+            <div *ngIf="f['password'].errors?.['required']">Password is required</div>
+            <div *ngIf="f['password'].errors?.['minlength']">Password must be at least 6 characters long</div>
+            <div *ngIf="f['password'].errors?.['maxlength']">
+              Username must not exceed 40 characters
+            </div>
+            <div *ngIf="f['password'].errors?.['capitalLetterRequired']">
+              Password must contain at least one capital letter
+            </div>
+            <div *ngIf="f['password'].errors?.['symbolRequired']">
+              Password must contain at least one symbol
+            </div>
+          </div>
+        </div>   
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            type="{{ confirmPasswordVisible ? 'text' : 'password' }}"
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }"
+            placeholder="Confirm Password"
+          />
+          <div class="input-group shorter-input-group ">
+            <div class="input-group-append">
+              <span class="input-group-text password-toggle" (click)="togglePasswordVisibility('confirmPassword')">
+                <i class="fa" [ngClass]="{ 'fa-eye':confirmPasswordVisible, 'fa-eye-slash': !confirmPasswordVisible }"></i>
+              </span>
+              </div>
+            </div>
+          <div *ngIf="submitted && f['confirmPassword'].errors" class="invalid-feedback">
+            <div *ngIf="f['confirmPassword'].errors?.['required']">
+              Confirm Password is required
+            </div>
+            <div *ngIf="f['confirmPassword'].errors?.['mustMatch']">
+              Confirm Password does not match
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a routerLink="/login">Already have an account? Login</a>
+        </div>
+        <div class="form-group text-center ">
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </form>
+      <div *ngIf="successMessage" class="success-message"style="text-align: center;">{{ successMessage }}</div>
