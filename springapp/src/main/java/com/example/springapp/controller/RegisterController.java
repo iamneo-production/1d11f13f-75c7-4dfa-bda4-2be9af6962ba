@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.example.springapp.dto.RegisterDto;
 import com.example.springapp.service.RegisterService;
@@ -42,7 +43,6 @@ public class RegisterController {
                     .body("phone number already exists");
         }
 
-        // Save the student
         String savedStudentId = registerService.addStudent(registerDto);
         return ResponseEntity.ok(savedStudentId);
     }
@@ -57,5 +57,15 @@ public class RegisterController {
     public ResponseEntity<Boolean> checkphoneNumberExists(@PathVariable String phoneNumber) {
         boolean phoneNumberExists = registerService.checkphoneNumberExists(phoneNumber);
         return ResponseEntity.ok(phoneNumberExists);
+
 }
+    @PutMapping("/resetpassword/{email}")
+    public ResponseEntity<String> updatePasswordByEmailAddress(@PathVariable String email, @RequestBody String newPassword) {
+        RegisterDto updatedRegisterDto = registerService.updatePassword(email, newPassword);
+        if (updatedRegisterDto != null) {
+            return ResponseEntity.ok("Password updated successfully");
+        } else {
+            return ResponseEntity.badRequest().body("Error updating password");
+        }
+    }
 }

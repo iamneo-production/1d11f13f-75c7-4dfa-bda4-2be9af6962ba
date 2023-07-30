@@ -36,6 +36,7 @@ export class StudentListComponent {
     })
   }
   
+<<<<<<< HEAD
   getfilteredStudents(): Student[] {
     return this.students.filter(student => {
       const searchTextLower = this.searchText.toLowerCase();
@@ -66,5 +67,33 @@ export class StudentListComponent {
     });
   }
   
+=======
+  get filteredCourses(): Student[] {
+    return this.students.filter(students => students.firstName.toLowerCase().includes(this.searchText.toLowerCase()));
+    }
+    onSearch() {
+      if (this.searchText.trim() !== '') {
+        this.students = this.students.filter((student) =>
+          this.studentMatchesSearchText(student, this.searchText.toLowerCase())
+        );
+      } else {
+        this.getstudents();
+      }
+    }
+    
+    private studentMatchesSearchText(student: Student, searchText: string): boolean {
+      return (
+        student.firstName.toLowerCase().includes(searchText) ||
+        student.lastName.toLowerCase().includes(searchText)||
+        student.email.toLowerCase().includes(searchText) ||
+        student.id.toString().includes(searchText) ||
+        student.phoneNumber.toString().includes(searchText) ||
+        student.address.toLowerCase().includes(searchText)
+        
+      );
+    }
+    
+
+>>>>>>> 9a658837913efdc4c946b4c505443577936b735b
 
 }

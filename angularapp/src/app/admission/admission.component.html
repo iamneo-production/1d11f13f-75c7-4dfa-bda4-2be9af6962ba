@@ -1,57 +1,9 @@
 <app-header></app-header>
 <!-- admission.component.html -->
 <div class="container admission-form-container">
-  <h1 class="text-center mb-5">Student Admission Form</h1>
+  <!-- <h1 class="text-center mb-5">Student Admission Form</h1> -->
   <form [formGroup]="admissionForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate enctype="multipart/form-data">
     <div class="row d-flex align-items-stretch">
-      <!-- <div class="form-group">
-        <label for="name">First Name*</label>
-        <input type="text" class="form-control" id="firstName" placeholder="Enter first name" formControlName="firstName"
-          [ngClass]="{ 'is-invalid': firstName?.invalid && firstName?.touched, 'is-valid': firstName?.valid && firstName?.touched }"
-          autocomplete="off">
-        <div *ngIf="firstName?.invalid && firstName?.touched" class="invalid-feedback">
-          This field is required and should contain only letters (minimum 3 characters)
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="lname">Last Name*</label>
-        <input type="text" class="form-control" id="lastName" placeholder="Enter last name" formControlName="lastName"
-          [ngClass]="{ 'is-invalid': lastName?.invalid && lastName?.touched, 'is-valid': lastName?.valid && lastName?.touched }"
-          autocomplete="off">
-        <div *ngIf="lastName?.invalid && lastName?.touched" class="invalid-feedback">
-          This field is required and should contain only letters (minimum 3 characters)
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email*</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter email id" formControlName="email"
-          [ngClass]="{ 'is-invalid': email?.invalid && email?.touched, 'is-valid': email?.valid && email?.touched }"
-          autocomplete="off">
-        <div *ngIf="email?.invalid && email?.touched" class="invalid-feedback">
-          Please enter a valid email address
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="address">Address*</label>
-        <textarea class="form-control" id="address" rows="1" placeholder="Enter full address" formControlName="address"
-          [ngClass]="{ 'is-invalid': address?.invalid && address?.touched, 'is-valid': address?.valid && address?.touched }"
-          autocomplete="off"></textarea>
-        <div *ngIf="address?.invalid && address?.touched" class="invalid-feedback">
-          This field is required
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="phone">Phone Number*</label>
-        <input type="text" class="form-control" id="phoneNumber" placeholder="Enter phone number" formControlName="phoneNumber"
-          [ngClass]="{ 'is-invalid': phoneNumber?.invalid && phoneNumber?.touched, 'is-valid': phoneNumber?.valid && phoneNumber?.touched }"
-          autocomplete="off">
-        <div *ngIf="phoneNumber?.invalid && phoneNumber?.touched" class="invalid-feedback">
-          This field is required and should contain 10 digits
-        </div>
-      </div> -->
       <div class="form-group">
         <label for="documents">Required Documents*</label>
         <input type="file" class="form-control" id="documents" formControlName="documents"
@@ -86,7 +38,7 @@
   </form>
 </div>
 
-<div class="application-status-btn-container">
+<!-- <div class="application-status-btn-container">
   <button type="button" class="btn btn-secondary rounded-pill btn-lg custom-btn" (click)="checkApplicationStatus()" >Application Status</button>
-</div>
+</div> -->
 

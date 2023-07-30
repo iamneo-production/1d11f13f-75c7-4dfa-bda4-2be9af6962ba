@@ -16,6 +16,11 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
+import { AdmissionDetailsComponent } from './admission-details/admission-details.component';
+import { Admission } from './class/admission';
+import { AdmissionListComponent } from './admission-list/admission-list.component';
+// import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+
 
 
 
@@ -43,6 +48,14 @@ const routes: Routes = [
   {
     component: AddcourseComponent,
     path: "addcourse"
+  },
+  {
+    component:AdmissionDetailsComponent,
+    path: "admission-details/:id"
+  },
+  {
+    component: AdmissionListComponent,
+    path: "admission-list"
   },
   {
     component: UpdatecourseComponent,

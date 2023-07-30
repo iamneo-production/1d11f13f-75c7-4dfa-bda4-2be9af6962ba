@@ -3,9 +3,10 @@
     <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="width:30%;"
     [(ngModel)]="searchText" [ngModelOptions]="{ standalone: true }" (input)="onSearch()">
     <!-- <span class="fas fa-search search-icon"></span> -->
-    <button class="btn btn-secondary mt-2 green-button" (click)="checkApplicationStatus()">Application Status</button>
-    <p *ngIf="showApplicationStatus">Application is {{ applicationAccepted ? 'Accepted' : 'Not Accepted' }}</p><br><br>
-        <div class="row">
+    <!-- <button class="btn btn-secondary mt-2 green-button" (click)="checkApplicationStatus()">Application Status</button> -->
+    <!-- <p *ngIf="showApplicationStatus">Application is {{ applicationAccepted ? 'Accepted' : 'Not Accepted' }}</p><br><br> -->
+       <br>
+       <div class="row">
             <div class="col-lg-4 mb-2" *ngFor="let course of filteredCourses ">
                 <div class="card">
                     <img class="card-img-top" src="../../../../assets/Card.jpg" class="card-img-top smaller-image" alt="Course Image">

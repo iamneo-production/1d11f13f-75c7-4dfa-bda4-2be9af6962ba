@@ -49,10 +49,10 @@ export class RegisterFormComponent {
           RegisterFormService.passwordValidator()
         ]
       ],
-      // confirmPassword: ['', Validators.required]
+      confirmPassword: ['', Validators.required]
     }, 
     {
-      // validator: this.MustMatch('password', 'confirmPassword')
+      validator: this.MustMatch('password', 'confirmPassword')
     });
   }
 
