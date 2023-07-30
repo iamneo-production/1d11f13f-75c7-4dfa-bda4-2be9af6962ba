@@ -12,6 +12,22 @@ import { EnrolledCourseComponent } from './enrolled-course/enrolled-course.compo
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { CourseComponent } from './course/course.component';
+import { CourselistComponent } from './coursemanagement/courselist/courselist.component';
+import { AddcourseComponent } from './coursemanagement/addcourse/addcourse.component';
+import { UpdatecourseComponent } from './coursemanagement/updatecourse/updatecourse.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CourseviewComponent } from './coursemanagement/courseview/courseview.component';
+import { StudentListComponent } from './student-list/student-list.component';
+import { AddStudentComponent } from './add-student/add-student.component';
+import { UpdateStudentComponent } from './update-student/update-student.component';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ContactComponent } from './contact/contact.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
+
+import { MatIconModule } from "@angular/material/icon";
+import { AdmissionListComponent } from './admission-list/admission-list.component';
+import { AdmissionDetailsComponent } from './admission-details/admission-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +37,22 @@ import { CourseComponent } from './course/course.component';
     EnrolledCourseComponent,
     CourseDetailsComponent,
     RegisterFormComponent,
-    CourseComponent
+    CourseComponent,
+    CourselistComponent,
+    AddcourseComponent,
+    UpdatecourseComponent,
+    NavbarComponent,
+    CourseviewComponent,
+    StudentListComponent,
+    AddStudentComponent,
+    UpdateStudentComponent,
+    LoginComponent,
+    ProfileComponent,
+    ContactComponent,
+    StudentDetailsComponent,
+    AdmissionListComponent,
+    AdmissionDetailsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -29,6 +60,7 @@ import { CourseComponent } from './course/course.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    MatIconModule,
     CommonModule
   ],
   providers: [],

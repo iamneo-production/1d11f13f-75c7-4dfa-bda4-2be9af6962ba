@@ -1,12 +1,15 @@
+<app-header></app-header>
 <div class="container ">
-    <input type="text" class="form-control mb-4" placeholder="Search Course" (ngModel)="searchText">
-    <span class="fas fa-search search-icon"></span>
-    <button class="btn btn-secondary mt-2 green-button" (click)="checkApplicationStatus()">Application Status</button>
-    <p *ngIf="showApplicationStatus">Application is {{ applicationAccepted ? 'Accepted' : 'Not Accepted' }}</p><br><br>
-        <div class="row">
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="width:30%;"
+    [(ngModel)]="searchText" [ngModelOptions]="{ standalone: true }" (input)="onSearch()">
+    <!-- <span class="fas fa-search search-icon"></span> -->
+    <!-- <button class="btn btn-secondary mt-2 green-button" (click)="checkApplicationStatus()">Application Status</button> -->
+    <!-- <p *ngIf="showApplicationStatus">Application is {{ applicationAccepted ? 'Accepted' : 'Not Accepted' }}</p><br><br> -->
+       <br>
+       <div class="row">
             <div class="col-lg-4 mb-2" *ngFor="let course of filteredCourses ">
                 <div class="card">
-                    <img class="card-img-top" src="https://static.vecteezy.com/system/resources/previews/007/559/606/original/a-children-learning-coding-or-computer-programming-flat-illustration-coding-for-kids-basic-computer-programing-can-be-used-for-web-landing-page-social-media-promotion-etc-vector.jpg" alt="Course Image">
+                    <img class="card-img-top" src="../../../../assets/Card.jpg" class="card-img-top smaller-image" alt="Course Image">
                     <div class="card-body">
                         <h2 class="card-title">{{ course.name }}</h2>
                         <h3 class="card-title">Credits: {{ course.credits }}</h3>

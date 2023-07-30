@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { RegisterFormService } from '../register-form.service';
+import { RegisterFormService } from '../service/register-form.service';
 
 @Component({
   selector: 'app-register-form',
@@ -15,9 +15,11 @@ export class RegisterFormComponent {
   passwordVisible = false;
   confirmPasswordVisible = false;
   emailExists = false;
-  contactnoExists = false;
+  phoneNumberExists = false;
   emailError: string = '';
-  contactnoError: string = '';
+  phoneNumberError: string = '';
+  successMessage!: string;
+  
 
   constructor(
     private formBuilder: FormBuilder,
@@ -25,8 +27,8 @@ export class RegisterFormComponent {
     private http: HttpClient
   ) {
     this.registerForm = this.formBuilder.group({
-      firstname: ['', Validators.required],
-      lastname: ['', [Validators.required]],
+      firstName: ['', Validators.required],
+      lastName: ['', [Validators.required]],
       email: [
         '',
         [
@@ -36,7 +38,8 @@ export class RegisterFormComponent {
           RegisterFormService.lowercaseEmailValidator()
         ]
       ],
-      contactno: ['', [Validators.required, Validators.pattern('[0-9]{10}')]],
+      phoneNumber: ['', [Validators.required, Validators.pattern('[0-9]{10}')]],
+      address: ['', Validators.required],
       password: [
         '',
         [
@@ -47,7 +50,8 @@ export class RegisterFormComponent {
         ]
       ],
       confirmPassword: ['', Validators.required]
-    }, {
+    }, 
+    {
       validator: this.MustMatch('password', 'confirmPassword')
     });
   }
@@ -94,27 +98,37 @@ export class RegisterFormComponent {
           if (emailExists) {
             this.f['email'].setErrors({ emailExists: true });
           } else {
-            this.registerFormService.checkContactnoExists(formData.contactno).subscribe(
-              (contactnoExists: boolean) => {
-                this.contactnoExists = contactnoExists;
+            this.registerFormService.checkphoneNumberExists(formData.phoneNumber).subscribe(
+              (phoneNumberExists: boolean) => {
+                this.phoneNumberExists = phoneNumberExists;
 
-                if (contactnoExists) {
-                  this.f['contactno'].setErrors({ contactnoExists: true });
+                if (phoneNumberExists) {
+                  this.f['phoneNumber'].setErrors({ phoneNumberExists: true });
                 } else {
                   this.registerFormService.saveFormData(formData).subscribe(
-                    (response) => {
+                    (_response) => {
                       // Display success message
-                      alert('Register form submitted successfully');
+                      console.log('Register form submitted successfully');
+                     
                     },
                     (error) => {
-                      console.error('Error saving form data:', error);
-                      // Display error message to the user if needed
+                      if (error.status === 200) {
+                        console.log('Register form submitted successfully');
+                        this.successMessage = 'Register form submitted successfully';
+                        // Display success message
+                      } else if (error.status === 400) {
+                        console.error('Error saving form data:', error.error);
+                        // Display error message for invalid data
+                      } else {
+                        console.error('Failed to save form data:', error);
+                        // Display error message for other errors
+                      }
                     }
                   );
                 }
               },
-              (error) => {
-                console.error('Error checking contact number existence:', error);
+              (error: any) => {
+                console.error('Error checking phoneNumber existence:', error);
               }
             );
           }
@@ -122,7 +136,7 @@ export class RegisterFormComponent {
         (error) => {
           console.error('Error checking email existence:', error);
         }
-      );
-    }
+    );
+   }
   }
 }

@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="container p-2">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card"> <div class="card-body">
+                <h3 class="text-center">Contact Form</h3>
+                <form [formGroup]="contactForm" (submit)="onSubmit()" ngNativeValidate>
+                       <div>
+                           <label>Full Name</label>
+                           <input type="text" class="form-control" name="firstname" formControlName="firstName" required>
+                           <span class="text-danger" *ngIf="!firstname?.valid && firstname?.touched">
+                            Firstname is required 
+                          </span>
+                       </div>
+
+                       <div>
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="email" formControlName="email" required>
+                            <span class="text-danger" *ngIf="!email?.valid && email?.touched">
+                            Email is required 
+                          </span>
+                        </div>
+                       <div>
+                           <label>Message</label><textarea name="message" class="form-control"  rows="4" cols="50" formControlName="message" required>
+                            </textarea>
+                            <span class="text-danger" *ngIf="!message?.valid && message?.touched">
+                                Message is required 
+                              </span>
+                        </div>
+                        <br>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                </div>
+            </div>
+        </div>
+ </div>
+</div>
