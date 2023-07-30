@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<table id="student">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Entrolled Course</th>
+      <th scope="col">Application View</th>
+      <th scope="col">Application status</th>
+    </tr>
+  <tr *ngFor="let admission of admissions">
+ 
+    <th scope="row">{{ admission.id  }}</th>
+    <td>{{admission.firstname}}</td>
+    <td>{{admission.course}}</td>
+    <td>
+        <button type=button class="btn" (click) = "admissionDetails(admission.id)" >View Details</button>
+    </td>
+    <td>
+      <button type="button" class="btn "  (click)="accept(admission.id)" [disabled]="isAcceptButtonDisabled[admission.id]" >Accept</button>
+    
+      <button type="button" class="btn "  (click)="reject(admission.id)" [disabled]="isRejectButtonDisabled[admission.id]">Reject</button>
+    
+    </td>
+  </tr>
+</table>

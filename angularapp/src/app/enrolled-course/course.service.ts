@@ -13,32 +13,32 @@ export class CourseService {
   enrolledCourses: Course[] = [
     {
       name: 'Java',
-      description: 'Learn the popular Java programming language and build robust applications.',
+      description: 'Learn Java programming',
       duration: '8 Weeks'
     },
     {
       name: 'Python',
-      description: 'Explore the versatile Python programming language for various applications.',
+      description: 'Explore Python programming',
       duration: '12 Weeks'
     },
     {
       name: 'Angular',
-      description: 'Master the Angular framework and build dynamic web applications.',
+      description: 'Master the Angular framework',
       duration: '10 Weeks'
     },
     {
       name: 'React',
-      description: 'Learn React for building interactive user interfaces and single-page applications.',
+      description: 'Learn single-page applications.',
       duration: '8 Weeks'
     },
     {
       name: 'Spring Boot',
-      description: 'Develop stand-alone, production-grade Spring applications that you can "just run".',
+      description: 'Develop stand-alone applications',
       duration: '12 Weeks'
     },
     {
       name: 'MySQL',
-      description: 'The world\'s most popular open-source relational database management system.',
+      description: 'Learn relational database management system',
       duration: '10 Weeks'
     },
   ];

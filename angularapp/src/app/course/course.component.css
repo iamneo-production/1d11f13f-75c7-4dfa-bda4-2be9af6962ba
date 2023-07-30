@@ -1,0 +1,50 @@
+.card-top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: .25rem;
+}
+
+
+.form-control {
+    border-radius: 3px;
+    width: 600px;
+    margin-left: 250px;
+    margin-top: 40px;
+}
+
+.search-icon {
+    position: absolute;
+    z-index: 20;
+    right: 29%;
+    top: 124px;
+    color: blue;
+}
+
+.card{
+    width: 18rem;
+}
+
+.card-img-top:hover{
+    width: 100%;
+    height: 100%;
+}
+
+.card-body{
+    width: 90%;
+    height: 90%;
+}
+
+.green-button {
+    background-color: green;
+    color: white;
+  }
+  
+  .green-button:hover {
+    background-color: darkgreen;
+  }

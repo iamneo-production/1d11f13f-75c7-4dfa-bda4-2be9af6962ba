@@ -1,34 +1,33 @@
-<h3>Enrolled Courses</h3>
-<div class="text-center mt-3 search-bar-container">
-  <div class="input-group">
-    <input type="text" class="form-control search-bar" placeholder="Search Your Enrolled Courses" [(ngModel)]="searchTerm">
-    <div class="input-group-append">
-      <button class="btn btn-danger" type="button" (click)="clearSearch()">
-        <i class="fas fa-times"></i>
-      </button>
+<app-header></app-header>
+<div class="container">
+  <h3 class="text-center">Enrolled Courses</h3>
+  <div class="text-center mt-3 search-bar-container">
+    <div class="input-group">
+      <input type="text" class="form-control search-bar" placeholder="Search Your Enrolled Courses" [(ngModel)]="searchTerm">
+      <div class="input-group-append">
+        <button class="btn btn-danger" type="button" (click)="clearSearch()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
     </div>
   </div>
-</div>
   <br>
   <div class="row mb-2 text-center">
-    <div class="col-md-6 px-4" *ngFor="let course of filteredCourses">
+    <div class="col-md-6 col-lg-4" *ngFor="let course of filteredCourses">
       <div class="card mb-4">
-        <img src="/home/coder/project/workspace/angularapp/src/assets/Card.jpg" class="card-img-top" alt="Card Image">
+        <img src="../../../../assets/Card.jpg" class="card-img-top smaller-image" alt="Card Image">
         <div class="card-body">
           <h3 class="mb-0">{{ course.name }}</h3>
-          <p class="card-text mb-auto"><strong>Description:</strong> {{ course.description }}</p>
-          <p class="card-text"><strong>Course Duration:</strong> {{ course.duration }}</p>
+          <p class="card-text">{{ course.description }}</p>
           <a href="#" class="btn btn-primary ml-2 btn-sm">Start Learning</a>
         </div>
       </div>
     </div>
   </div>
-  
-  
+
   <div class="row" *ngIf="filteredCourses.length === 0">
     <div class="col-md-12 text-center">
-      <p>Sorry, No Course Found</p>
+      <p class="not-found-message">Sorry, No Course Found ☹</p>
     </div>
   </div>
-  
-  
+</div>
