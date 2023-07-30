@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin("https://8081-ecafcddffdddcefbeacfaceadbffaabaebdcec.project.examly.io")
 @RequestMapping("/students")
 public class StudentController {
 

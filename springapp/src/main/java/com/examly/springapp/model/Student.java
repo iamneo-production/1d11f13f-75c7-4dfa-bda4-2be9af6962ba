@@ -14,10 +14,10 @@ public class Student {
     private String firstName;
     private String lastName;
     private String email;
-    private String password;
     private String address;
+    private String password;
     private String phoneNumber;
- 
+   
     public int getId() {
         return id;
     }
@@ -74,15 +74,15 @@ public class Student {
         this.phoneNumber = phoneNumber;
     }
 
-    public Student(int id, String firstName, String lastName, String email, String password, String address,
-            String phoneNumber) {
+    public Student(int id, String firstName, String lastName, String email,String address,   String phoneNumber, String password
+         ) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.password = password;
         this.address = address;
         this.phoneNumber = phoneNumber;
+        this.password = password;    
     }
 
     public Student() {

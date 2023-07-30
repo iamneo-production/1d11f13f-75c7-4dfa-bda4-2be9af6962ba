@@ -24,6 +24,7 @@ import com.examly.springapp.model.Course;
 import com.examly.springapp.service.CourseService;
 
 @RestController
+@CrossOrigin("https://8081-ecafcddffdddcefbeacfaceadbffaabaebdcec.project.examly.io")
 @RequestMapping("/courses")
 public class CourseController {
 

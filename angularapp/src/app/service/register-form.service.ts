@@ -9,7 +9,7 @@ export class RegisterFormService {
   constructor(private http: HttpClient) {}
 
   saveFormData(formData: any) {
-    return this.http.post<any>('https://8080-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io/home/register', formData);
+    return this.http.post<any>('https://8080-ecafcddffdddcefbeacfaceadbffaabaebdcec.project.examly.io/home/register', formData);
   }
  
   checkEmailExists(email: string): Observable<boolean> {
