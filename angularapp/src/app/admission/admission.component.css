@@ -6,6 +6,7 @@
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid #55aaff;
+  
 }
 .admission-form-container h1 {
   font-size: 28px;
@@ -97,4 +98,18 @@ span {
 
 .validation-error + .form-control {
   border-color: red;
+}
+
+.application-status-btn-container {
+  position: fixed;
+  top: 80px;
+  left: 13px; 
+  z-index: 100; 
+ 
+}
+
+.application-status-btn-container button {
+  width: 170px; 
+  height: 40px; 
+  font-size: 15px;
 }
