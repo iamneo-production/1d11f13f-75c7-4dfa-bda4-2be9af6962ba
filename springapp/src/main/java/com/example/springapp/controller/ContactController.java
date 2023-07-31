@@ -18,7 +18,7 @@ import com.example.springapp.model.Contact;
 import com.example.springapp.repository.ContactRepo;
 
 @RestController
-@CrossOrigin("https://8081-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io")
+@CrossOrigin("https://8081-cedabaebcefbeacfaceadeaeaadbdbabf.project.examly.io")
 public class ContactController {
     
     @Autowired

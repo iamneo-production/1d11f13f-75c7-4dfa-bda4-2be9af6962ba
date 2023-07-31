@@ -24,7 +24,6 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
-
 import { MatIconModule } from "@angular/material/icon";
 import { AdmissionListComponent } from './admission-list/admission-list.component';
 import { AdmissionDetailsComponent } from './admission-details/admission-details.component';

@@ -7,7 +7,7 @@ import { Student } from '../class/student';
   providedIn: 'root'
 })
 export class StudentService {
-  private baseURL = "https://8080-bdfdeabfecfbcefbeacfaceadeaeaadbdbabf.project.examly.io/students";
+  private baseURL = "https://8080-cedabaebcefbeacfaceadeaeaadbdbabf.project.examly.io/students";
   constructor(private httpClient: HttpClient) { }
 
   getstudentslist(): Observable<Student[]> {
